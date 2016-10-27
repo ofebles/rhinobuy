@@ -1,0 +1,28 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "customer",
+            "otherEntityName": "customer",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "productos",
+            "otherEntityName": "product",
+            "otherEntityRelationshipName": "shopingCart"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "date",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "changelogDate": "20161026162656",
+    "entityTableName": "shoping_cart",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl"
+}

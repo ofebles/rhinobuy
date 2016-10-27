@@ -1,0 +1,22 @@
+{
+    "rhinobuyApp": {
+        "casa" : {
+            "home": {
+                "title": "Casas",
+                "createLabel": "Criar novo Casa",
+                "createOrEditLabel": "Criar ou editar Casa",
+                "search": "Pesquisar por Casa"
+            },
+            "created": "Um novo Casa é criado com o identificador {{ param }}",
+            "updated": "Um Casa é atualizado com o identificador {{ param }}",
+            "deleted": "Um Casa é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Casa {{ id }}?"
+            },
+            "detail": {
+                "title": "Casa"
+            },
+            "direccion": "Direccion"
+        }
+    }
+}

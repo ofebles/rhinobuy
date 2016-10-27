@@ -1,0 +1,60 @@
+<div>
+    <h2 data-translate="rhinobuyApp.referenceInvoiceStatus.home.title">Reference Invoice Statuses</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="reference-invoice-status.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="rhinobuyApp.referenceInvoiceStatus.home.createLabel">
+                        Create new Reference Invoice Status
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="rhinobuyApp.referenceInvoiceStatus.number">Number</span></th>
+                    <th><span data-translate="rhinobuyApp.referenceInvoiceStatus.invoiceDate">Invoice Date</span></th>
+                    <th><span data-translate="rhinobuyApp.referenceInvoiceStatus.invoiceDetails">Invoice Details</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="referenceInvoiceStatus in vm.referenceInvoiceStatuses track by referenceInvoiceStatus.id">
+                    <td><a ui-sref="reference-invoice-status-detail({id:referenceInvoiceStatus.id})">{{referenceInvoiceStatus.id}}</a></td>
+                    <td>{{referenceInvoiceStatus.number}}</td>
+                        <td>{{referenceInvoiceStatus.invoiceDate | date:'mediumDate'}}</td>
+                    <td>{{referenceInvoiceStatus.invoiceDetails}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="reference-invoice-status-detail({id:referenceInvoiceStatus.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="reference-invoice-status.edit({id:referenceInvoiceStatus.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="reference-invoice-status.delete({id:referenceInvoiceStatus.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

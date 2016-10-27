@@ -1,0 +1,22 @@
+{
+    "rhinobuyApp": {
+        "orderItemStatusCode" : {
+            "home": {
+                "title": "Order Item Status Codes",
+                "createLabel": "Criar novo Order Item Status Code",
+                "createOrEditLabel": "Criar ou editar Order Item Status Code",
+                "search": "Pesquisar por Order Item Status Code"
+            },
+            "created": "Um novo Order Item Status Code é criado com o identificador {{ param }}",
+            "updated": "Um Order Item Status Code é atualizado com o identificador {{ param }}",
+            "deleted": "Um Order Item Status Code é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Order Item Status Code {{ id }}?"
+            },
+            "detail": {
+                "title": "Order Item Status Code"
+            },
+            "description": "Description"
+        }
+    }
+}

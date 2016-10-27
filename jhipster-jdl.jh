@@ -1,0 +1,167 @@
+
+enum CustomerType{
+	NATURAL_PERSON,
+    LEGAL_PERSON
+}
+
+entity Customer {
+	type CustomerType,
+    organizationName String,
+    gender Integer,
+    firstName String required,
+    middleName String,
+    lastName String required,
+    email String required maxlength(30)
+    minlength(5) pattern("[\\w]*@[a-zA-Z]*.com"),
+    userName String required,
+    userPassword String required,
+    phoneNumber String required,
+    address String,
+    city String,
+    country String,
+}
+
+
+
+entity CustomerPaymentMethod{
+	code String,
+    creditCardNumber String,
+    details String
+}
+
+entity ReferencePaymentMethod {
+	description String,
+}
+
+entity ReferenceLanguage {
+	lang String,
+}
+
+entity ProductDescription {
+	content String,
+}
+entity Product {
+	returnAuthorization Boolean,
+    name String required,
+    price Double required,
+    size String,
+    color String required,
+    description String required,
+    otherDetails String,
+    
+}
+
+entity Picture {
+	path String,
+}
+entity Category{
+   name String required,
+   description String required,
+
+}
+
+entity ShopingCart {
+	date LocalDate
+}
+
+
+entity WishList {
+	name String required,
+}
+
+entity Promotion {
+	description String,
+}
+entity Payment {
+	paymentDate LocalDate,
+	ammount Double,
+}
+
+entity Supplier {
+	name String required,
+}
+
+entity ReferenceInvoiceStatus {
+	number String,
+	invoiceDate LocalDate,
+    invoiceDetails String,
+}
+
+
+entity Orders {
+	datePlaced LocalDate,
+	details String
+}
+
+
+entity OrderItem {
+  quantity BigDecimal,
+  price BigDecimal,
+  details String
+}
+
+entity OrderItemStatusCode {
+  description String,
+}
+
+
+entity Shipment {
+    trackingNumber String,
+    shipmentDate LocalDate,
+    otherDetails String,
+}
+
+
+entity Invoice {
+	number String,
+	invoiceDate LocalDate,
+    invoiceDetails String,
+}
+
+
+
+relationship OneToMany {
+	
+	Category{category} to Category,
+    Customer{shopingcart} to ShopingCart,
+    Customer{paymentmethod} to CustomerPaymentMethod,
+    Customer{wishlist} to WishList,
+    Product{product} to Product,
+    Invoice{payment} to Payment,
+    Orders{invoice} to Invoice{order},
+    Orders{shipment} to Shipment,
+    Orders{item} to OrderItem,
+    ShopingCart{productos} to Product,
+    Product{description} to  ProductDescription,
+    Shipment{invoice} to  Invoice,
+    Product{image} to Picture,
+ 	Promotion{products} to Product 
+
+}
+
+
+
+relationship ManyToOne {
+ CustomerPaymentMethod{reference} to ReferencePaymentMethod,
+ Payment{method} to CustomerPaymentMethod,
+ Invoice{status} to ReferenceInvoiceStatus,
+ OrderItem{status} to OrderItemStatusCode,
+ Orders{productos} to Product,
+ Product{category} to Category,
+ ProductDescription{lang} to ReferenceLanguage
+ 
+}
+
+relationship ManyToMany{
+ Supplier{product} to Product{supplier},
+ WishList{product} to Product
+
+}
+
+paginate Customer with infinite-scroll
+paginate Product with pager
+service all with serviceImpl
+
+
+
+

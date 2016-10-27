@@ -1,0 +1,24 @@
+{
+    "rhinobuyApp": {
+        "shopingCart" : {
+            "home": {
+                "title": "Shoping Carts",
+                "createLabel": "Criar novo Shoping Cart",
+                "createOrEditLabel": "Criar ou editar Shoping Cart",
+                "search": "Pesquisar por Shoping Cart"
+            },
+            "created": "Um novo Shoping Cart é criado com o identificador {{ param }}",
+            "updated": "Um Shoping Cart é atualizado com o identificador {{ param }}",
+            "deleted": "Um Shoping Cart é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Shoping Cart {{ id }}?"
+            },
+            "detail": {
+                "title": "Shoping Cart"
+            },
+            "date": "Date",
+            "customer": "Customer",
+            "productos": "Productos"
+        }
+    }
+}

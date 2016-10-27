@@ -1,0 +1,25 @@
+{
+    "rhinobuyApp": {
+        "metric" : {
+            "home": {
+                "title": "Metrics",
+                "createLabel": "Crear nuevo Metric",
+                "createOrEditLabel": "Crear o editar Metric",
+                "search": "Search for Metric"
+            },
+            "created": "Un nuevo Metric ha sido creado con el identificador {{ param }}",
+            "updated": "Un Metric ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Metric ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Metric {{ id }}?"
+            },
+            "detail": {
+                "title": "Metric"
+            },
+            "name": "Name",
+            "ammount": "Ammount",
+            "entry": "Entry",
+            "goal": "Goal"
+        }
+    }
+}

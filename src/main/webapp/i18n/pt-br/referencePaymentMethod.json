@@ -1,0 +1,22 @@
+{
+    "rhinobuyApp": {
+        "referencePaymentMethod" : {
+            "home": {
+                "title": "Reference Payment Methods",
+                "createLabel": "Criar novo Reference Payment Method",
+                "createOrEditLabel": "Criar ou editar Reference Payment Method",
+                "search": "Pesquisar por Reference Payment Method"
+            },
+            "created": "Um novo Reference Payment Method é criado com o identificador {{ param }}",
+            "updated": "Um Reference Payment Method é atualizado com o identificador {{ param }}",
+            "deleted": "Um Reference Payment Method é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Reference Payment Method {{ id }}?"
+            },
+            "detail": {
+                "title": "Reference Payment Method"
+            },
+            "description": "Description"
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "products",
+            "otherEntityName": "product",
+            "otherEntityRelationshipName": "promotion"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20161026162658",
+    "entityTableName": "promotion",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl"
+}

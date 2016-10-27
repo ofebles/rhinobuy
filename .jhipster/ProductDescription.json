@@ -1,0 +1,28 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "lang",
+            "otherEntityName": "referenceLanguage",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "product",
+            "otherEntityName": "product",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "content",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20161026162653",
+    "entityTableName": "product_description",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl"
+}

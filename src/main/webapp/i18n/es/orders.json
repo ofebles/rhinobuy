@@ -1,0 +1,27 @@
+{
+    "rhinobuyApp": {
+        "orders" : {
+            "home": {
+                "title": "Orders",
+                "createLabel": "Crear nuevo Orders",
+                "createOrEditLabel": "Crear o editar Orders",
+                "search": "Search for Orders"
+            },
+            "created": "Un nuevo Orders ha sido creado con el identificador {{ param }}",
+            "updated": "Un Orders ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Orders ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Orders {{ id }}?"
+            },
+            "detail": {
+                "title": "Orders"
+            },
+            "datePlaced": "Date Placed",
+            "details": "Details",
+            "invoice": "Invoice",
+            "shipment": "Shipment",
+            "item": "Item",
+            "productos": "Productos"
+        }
+    }
+}

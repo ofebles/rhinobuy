@@ -1,0 +1,15 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20161026162604",
+    "entityTableName": "order_item_status_code",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl"
+}

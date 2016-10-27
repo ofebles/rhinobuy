@@ -1,0 +1,60 @@
+<div>
+    <h2 data-translate="rhinobuyApp.shopingCart.home.title">Shoping Carts</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="shoping-cart.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="rhinobuyApp.shopingCart.home.createLabel">
+                        Create new Shoping Cart
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="rhinobuyApp.shopingCart.date">Date</span></th>
+                    <th><span data-translate="rhinobuyApp.shopingCart.customer">Customer</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="shopingCart in vm.shopingCarts track by shopingCart.id">
+                    <td><a ui-sref="shoping-cart-detail({id:shopingCart.id})">{{shopingCart.id}}</a></td>
+                        <td>{{shopingCart.date | date:'mediumDate'}}</td>
+                    <td>
+                        <a ui-sref="customer-detail({id:shopingCart.customer.id})">{{shopingCart.customer.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="shoping-cart-detail({id:shopingCart.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="shoping-cart.edit({id:shopingCart.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="shoping-cart.delete({id:shopingCart.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

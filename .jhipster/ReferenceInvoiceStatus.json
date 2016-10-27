@@ -1,0 +1,23 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "number",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "invoiceDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "invoiceDetails",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20161026162601",
+    "entityTableName": "reference_invoice_status",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl"
+}

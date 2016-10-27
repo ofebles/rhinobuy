@@ -1,0 +1,120 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myProductLabel" data-translate="rhinobuyApp.product.home.createOrEditLabel">Create or edit a Product</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.product.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.product.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="rhinobuyApp.product.returnAuthorization" for="field_returnAuthorization">Return Authorization</label>
+            <input type="checkbox" class="form-control" name="returnAuthorization" id="field_returnAuthorization"
+                    ng-model="vm.product.returnAuthorization"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="rhinobuyApp.product.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="vm.product.name"
+                    required />
+            <div ng-show="editForm.name.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.name.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="rhinobuyApp.product.price" for="field_price">Price</label>
+            <input type="number" class="form-control" name="price" id="field_price"
+                    ng-model="vm.product.price"
+                    required />
+            <div ng-show="editForm.price.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.price.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.price.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="rhinobuyApp.product.size" for="field_size">Size</label>
+            <input type="text" class="form-control" name="size" id="field_size"
+                    ng-model="vm.product.size"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="rhinobuyApp.product.color" for="field_color">Color</label>
+            <input type="text" class="form-control" name="color" id="field_color"
+                    ng-model="vm.product.color"
+                    required />
+            <div ng-show="editForm.color.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.color.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="rhinobuyApp.product.description" for="field_description">Description</label>
+            <input type="text" class="form-control" name="description" id="field_description"
+                    ng-model="vm.product.description"
+                    required />
+            <div ng-show="editForm.description.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.description.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="rhinobuyApp.product.otherDetails" for="field_otherDetails">Other Details</label>
+            <input type="text" class="form-control" name="otherDetails" id="field_otherDetails"
+                    ng-model="vm.product.otherDetails"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="rhinobuyApp.product.product" for="field_product">Product</label>
+            <select class="form-control" id="field_product" name="product" ng-model="vm.product.product" ng-options="product as product.id for product in vm.products track by product.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="rhinobuyApp.product.category" for="field_category">Category</label>
+            <select class="form-control" id="field_category" name="category" ng-model="vm.product.category" ng-options="category as category.id for category in vm.categories track by category.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="rhinobuyApp.product.shopingCart" for="field_shopingCart">Shoping Cart</label>
+            <select class="form-control" id="field_shopingCart" name="shopingCart" ng-model="vm.product.shopingCart" ng-options="shopingCart as shopingCart.id for shopingCart in vm.shopingcarts track by shopingCart.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="rhinobuyApp.product.promotion" for="field_promotion">Promotion</label>
+            <select class="form-control" id="field_promotion" name="promotion" ng-model="vm.product.promotion" ng-options="promotion as promotion.id for promotion in vm.promotions track by promotion.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

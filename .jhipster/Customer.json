@@ -1,0 +1,105 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "shopingcart",
+            "otherEntityName": "shopingCart",
+            "otherEntityRelationshipName": "customer"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "paymentmethod",
+            "otherEntityName": "customerPaymentMethod",
+            "otherEntityRelationshipName": "customer"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "wishlist",
+            "otherEntityName": "wishList",
+            "otherEntityRelationshipName": "customer"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "type",
+            "fieldType": "CustomerType",
+            "fieldValues": "NATURAL_PERSON,LEGAL_PERSON"
+        },
+        {
+            "fieldName": "organizationName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "gender",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "firstName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "middleName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "userName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "userPassword",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "phoneNumber",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "address",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "city",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "country",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": "5",
+            "fieldValidateRulesMaxlength": "30"
+        }
+    ],
+    "changelogDate": "20161026162649",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "customer",
+    "pagination": "infinite-scroll"
+}
