@@ -104,7 +104,6 @@
                     resolve: {
                         entity: function () {
                             return {
-                                direccion: null,
                                 id: null
                             };
                         }

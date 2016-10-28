@@ -16,26 +16,6 @@
         <dd>
             <span>{{vm.customer.gender}}</span>
         </dd>
-        <dt><span data-translate="rhinobuyApp.customer.firstName">First Name</span></dt>
-        <dd>
-            <span>{{vm.customer.firstName}}</span>
-        </dd>
-        <dt><span data-translate="rhinobuyApp.customer.middleName">Middle Name</span></dt>
-        <dd>
-            <span>{{vm.customer.middleName}}</span>
-        </dd>
-        <dt><span data-translate="rhinobuyApp.customer.lastName">Last Name</span></dt>
-        <dd>
-            <span>{{vm.customer.lastName}}</span>
-        </dd>
-        <dt><span data-translate="rhinobuyApp.customer.userName">User Name</span></dt>
-        <dd>
-            <span>{{vm.customer.userName}}</span>
-        </dd>
-        <dt><span data-translate="rhinobuyApp.customer.userPassword">User Password</span></dt>
-        <dd>
-            <span>{{vm.customer.userPassword}}</span>
-        </dd>
         <dt><span data-translate="rhinobuyApp.customer.phoneNumber">Phone Number</span></dt>
         <dd>
             <span>{{vm.customer.phoneNumber}}</span>
@@ -52,9 +32,9 @@
         <dd>
             <span>{{vm.customer.country}}</span>
         </dd>
-        <dt><span data-translate="rhinobuyApp.customer.email">Email</span></dt>
+        <dt><span data-translate="rhinobuyApp.customer.user">User</span></dt>
         <dd>
-            <span>{{vm.customer.email}}</span>
+            {{vm.customer.user.login}}
         </dd>
     </dl>
 

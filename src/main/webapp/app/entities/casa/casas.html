@@ -19,14 +19,12 @@
             <thead>
                 <tr>
                     <th><span data-translate="global.field.id">ID</span></th>
-                    <th><span data-translate="rhinobuyApp.casa.direccion">Direccion</span></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="casa in vm.casas track by casa.id">
                     <td><a ui-sref="casa-detail({id:casa.id})">{{casa.id}}</a></td>
-                    <td>{{casa.direccion}}</td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

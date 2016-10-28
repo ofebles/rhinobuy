@@ -21,28 +21,12 @@ public class Casa implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name = "direccion")
-    private String direccion;
-
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public Casa direccion(String direccion) {
-        this.direccion = direccion;
-        return this;
-    }
-
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
     }
 
     @Override
@@ -69,7 +53,6 @@ public class Casa implements Serializable {
     public String toString() {
         return "Casa{" +
             "id=" + id +
-            ", direccion='" + direccion + "'" +
             '}';
     }
 }

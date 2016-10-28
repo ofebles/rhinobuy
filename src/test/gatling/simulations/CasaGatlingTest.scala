@@ -67,7 +67,7 @@ class CasaGatlingTest extends Simulation {
             .exec(http("Create new casa")
             .post("/api/casas")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null, "direccion":"SAMPLE_TEXT"}""")).asJSON
+            .body(StringBody("""{"id":null}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_casa_url"))).exitHereIfFailed
             .pause(10)

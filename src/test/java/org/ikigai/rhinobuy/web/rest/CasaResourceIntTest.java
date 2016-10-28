@@ -38,9 +38,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = RhinobuyApp.class)
 public class CasaResourceIntTest {
 
-    private static final String DEFAULT_DIRECCION = "AAAAA";
-    private static final String UPDATED_DIRECCION = "BBBBB";
-
     @Inject
     private CasaRepository casaRepository;
 
@@ -74,8 +71,7 @@ public class CasaResourceIntTest {
      * if they test an entity which requires the current entity.
      */
     public static Casa createEntity(EntityManager em) {
-        Casa casa = new Casa()
-                .direccion(DEFAULT_DIRECCION);
+        Casa casa = new Casa();
         return casa;
     }
 
@@ -100,7 +96,6 @@ public class CasaResourceIntTest {
         List<Casa> casas = casaRepository.findAll();
         assertThat(casas).hasSize(databaseSizeBeforeCreate + 1);
         Casa testCasa = casas.get(casas.size() - 1);
-        assertThat(testCasa.getDireccion()).isEqualTo(DEFAULT_DIRECCION);
     }
 
     @Test
@@ -113,8 +108,7 @@ public class CasaResourceIntTest {
         restCasaMockMvc.perform(get("/api/casas?sort=id,desc"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-                .andExpect(jsonPath("$.[*].id").value(hasItem(casa.getId().intValue())))
-                .andExpect(jsonPath("$.[*].direccion").value(hasItem(DEFAULT_DIRECCION.toString())));
+                .andExpect(jsonPath("$.[*].id").value(hasItem(casa.getId().intValue())));
     }
 
     @Test
@@ -127,8 +121,7 @@ public class CasaResourceIntTest {
         restCasaMockMvc.perform(get("/api/casas/{id}", casa.getId()))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.id").value(casa.getId().intValue()))
-            .andExpect(jsonPath("$.direccion").value(DEFAULT_DIRECCION.toString()));
+            .andExpect(jsonPath("$.id").value(casa.getId().intValue()));
     }
 
     @Test
@@ -148,8 +141,6 @@ public class CasaResourceIntTest {
 
         // Update the casa
         Casa updatedCasa = casaRepository.findOne(casa.getId());
-        updatedCasa
-                .direccion(UPDATED_DIRECCION);
 
         restCasaMockMvc.perform(put("/api/casas")
                 .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -160,7 +151,6 @@ public class CasaResourceIntTest {
         List<Casa> casas = casaRepository.findAll();
         assertThat(casas).hasSize(databaseSizeBeforeUpdate);
         Casa testCasa = casas.get(casas.size() - 1);
-        assertThat(testCasa.getDireccion()).isEqualTo(UPDATED_DIRECCION);
     }
 
     @Test

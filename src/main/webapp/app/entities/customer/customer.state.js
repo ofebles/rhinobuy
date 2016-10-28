@@ -109,16 +109,10 @@
                                 type: null,
                                 organizationName: null,
                                 gender: null,
-                                firstName: null,
-                                middleName: null,
-                                lastName: null,
-                                userName: null,
-                                userPassword: null,
                                 phoneNumber: null,
                                 address: null,
                                 city: null,
                                 country: null,
-                                email: null,
                                 id: null
                             };
                         }

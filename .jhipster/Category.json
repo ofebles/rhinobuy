@@ -5,7 +5,7 @@
             "relationshipName": "category",
             "otherEntityName": "category",
             "relationshipType": "many-to-one",
-            "otherEntityField": "id"
+            "otherEntityField": "name"
         },
         {
             "relationshipType": "one-to-many",

@@ -33,60 +33,6 @@
                      />
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="rhinobuyApp.customer.firstName" for="field_firstName">First Name</label>
-            <input type="text" class="form-control" name="firstName" id="field_firstName"
-                    ng-model="vm.customer.firstName"
-                    required />
-            <div ng-show="editForm.firstName.$invalid">
-                <p class="help-block"
-                    ng-show="editForm.firstName.$error.required" data-translate="entity.validation.required">
-                    This field is required.
-                </p>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label" data-translate="rhinobuyApp.customer.middleName" for="field_middleName">Middle Name</label>
-            <input type="text" class="form-control" name="middleName" id="field_middleName"
-                    ng-model="vm.customer.middleName"
-                     />
-        </div>
-        <div class="form-group">
-            <label class="control-label" data-translate="rhinobuyApp.customer.lastName" for="field_lastName">Last Name</label>
-            <input type="text" class="form-control" name="lastName" id="field_lastName"
-                    ng-model="vm.customer.lastName"
-                    required />
-            <div ng-show="editForm.lastName.$invalid">
-                <p class="help-block"
-                    ng-show="editForm.lastName.$error.required" data-translate="entity.validation.required">
-                    This field is required.
-                </p>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label" data-translate="rhinobuyApp.customer.userName" for="field_userName">User Name</label>
-            <input type="text" class="form-control" name="userName" id="field_userName"
-                    ng-model="vm.customer.userName"
-                    required />
-            <div ng-show="editForm.userName.$invalid">
-                <p class="help-block"
-                    ng-show="editForm.userName.$error.required" data-translate="entity.validation.required">
-                    This field is required.
-                </p>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label" data-translate="rhinobuyApp.customer.userPassword" for="field_userPassword">User Password</label>
-            <input type="text" class="form-control" name="userPassword" id="field_userPassword"
-                    ng-model="vm.customer.userPassword"
-                    required />
-            <div ng-show="editForm.userPassword.$invalid">
-                <p class="help-block"
-                    ng-show="editForm.userPassword.$error.required" data-translate="entity.validation.required">
-                    This field is required.
-                </p>
-            </div>
-        </div>
-        <div class="form-group">
             <label class="control-label" data-translate="rhinobuyApp.customer.phoneNumber" for="field_phoneNumber">Phone Number</label>
             <input type="text" class="form-control" name="phoneNumber" id="field_phoneNumber"
                     ng-model="vm.customer.phoneNumber"
@@ -116,27 +62,13 @@
                     ng-model="vm.customer.country"
                      />
         </div>
-        <div class="form-group">
-            <label class="control-label" data-translate="rhinobuyApp.customer.email" for="field_email">Email</label>
-            <input type="text" class="form-control" name="email" id="field_email"
-                    ng-model="vm.customer.email"
-                    required ng-minlength="5" ng-maxlength="30" />
-            <div ng-show="editForm.email.$invalid">
-                <p class="help-block"
-                    ng-show="editForm.email.$error.required" data-translate="entity.validation.required">
-                    This field is required.
-                </p>
-                <p class="help-block"
-                    ng-show="editForm.email.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="5">
-                    This field is required to be at least 5 characters.
-                </p>
-                <p class="help-block"
-                    ng-show="editForm.email.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="30">
-                    This field cannot be longer than 30 characters.
-                </p>
-            </div>
-        </div>
 
+        <div class="form-group">
+            <label data-translate="rhinobuyApp.customer.user" for="field_user">User</label>
+            <select class="form-control" id="field_user" name="user" ng-model="vm.customer.user" ng-options="user as user.login for user in vm.users track by user.id">
+                <option value=""></option>
+            </select>
+        </div>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">

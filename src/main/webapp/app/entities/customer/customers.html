@@ -22,16 +22,11 @@
                     <th jh-sort-by="type"><span data-translate="rhinobuyApp.customer.type">Type</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="organizationName"><span data-translate="rhinobuyApp.customer.organizationName">Organization Name</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="gender"><span data-translate="rhinobuyApp.customer.gender">Gender</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="firstName"><span data-translate="rhinobuyApp.customer.firstName">First Name</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="middleName"><span data-translate="rhinobuyApp.customer.middleName">Middle Name</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="lastName"><span data-translate="rhinobuyApp.customer.lastName">Last Name</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="userName"><span data-translate="rhinobuyApp.customer.userName">User Name</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="userPassword"><span data-translate="rhinobuyApp.customer.userPassword">User Password</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="phoneNumber"><span data-translate="rhinobuyApp.customer.phoneNumber">Phone Number</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="address"><span data-translate="rhinobuyApp.customer.address">Address</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="city"><span data-translate="rhinobuyApp.customer.city">City</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="country"><span data-translate="rhinobuyApp.customer.country">Country</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="email"><span data-translate="rhinobuyApp.customer.email">Email</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="user.login"><span data-translate="rhinobuyApp.customer.user">User</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th></th>
                 </tr>
             </thead>
@@ -41,16 +36,13 @@
                     <td data-translate="{{'rhinobuyApp.CustomerType.' + customer.type}}">{{customer.type}}</td>
                     <td>{{customer.organizationName}}</td>
                     <td>{{customer.gender}}</td>
-                    <td>{{customer.firstName}}</td>
-                    <td>{{customer.middleName}}</td>
-                    <td>{{customer.lastName}}</td>
-                    <td>{{customer.userName}}</td>
-                    <td>{{customer.userPassword}}</td>
                     <td>{{customer.phoneNumber}}</td>
                     <td>{{customer.address}}</td>
                     <td>{{customer.city}}</td>
                     <td>{{customer.country}}</td>
-                    <td>{{customer.email}}</td>
+                    <td>
+                        {{customer.user.login}}
+                    </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

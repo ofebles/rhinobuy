@@ -23,7 +23,7 @@
             "relationshipType": "many-to-one",
             "relationshipName": "productos",
             "otherEntityName": "product",
-            "otherEntityField": "id"
+            "otherEntityField": "name"
         }
     ],
     "fields": [

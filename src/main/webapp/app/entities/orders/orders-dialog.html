@@ -32,7 +32,7 @@
 
         <div class="form-group">
             <label data-translate="rhinobuyApp.orders.productos" for="field_productos">Productos</label>
-            <select class="form-control" id="field_productos" name="productos" ng-model="vm.orders.productos" ng-options="product as product.id for product in vm.products track by product.id">
+            <select class="form-control" id="field_productos" name="productos" ng-model="vm.orders.productos" ng-options="product as product.name for product in vm.products track by product.id">
                 <option value=""></option>
             </select>
         </div>

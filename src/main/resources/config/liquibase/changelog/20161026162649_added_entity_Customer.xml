@@ -33,26 +33,6 @@
                 <constraints nullable="true" />
             </column>
             
-            <column name="first_name" type="varchar(255)">
-                <constraints nullable="false" />
-            </column>
-            
-            <column name="middle_name" type="varchar(255)">
-                <constraints nullable="true" />
-            </column>
-            
-            <column name="last_name" type="varchar(255)">
-                <constraints nullable="false" />
-            </column>
-            
-            <column name="user_name" type="varchar(255)">
-                <constraints nullable="false" />
-            </column>
-            
-            <column name="user_password" type="varchar(255)">
-                <constraints nullable="false" />
-            </column>
-            
             <column name="phone_number" type="varchar(255)">
                 <constraints nullable="false" />
             </column>
@@ -68,11 +48,9 @@
             <column name="country" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            
-            <column name="email" type="varchar(30)">
-                <constraints nullable="false" />
+                        <column name="user_id" type="bigint">
+                <constraints unique="true" nullable="true" />
             </column>
-            
             <!-- jhipster-needle-liquibase-add-column - Jhipster will add columns here, do not remove-->
         </createTable>
         

@@ -38,25 +38,6 @@ public class Customer implements Serializable {
     private Integer gender;
 
     @NotNull
-    @Column(name = "first_name", nullable = false)
-    private String firstName;
-
-    @Column(name = "middle_name")
-    private String middleName;
-
-    @NotNull
-    @Column(name = "last_name", nullable = false)
-    private String lastName;
-
-    @NotNull
-    @Column(name = "user_name", nullable = false)
-    private String userName;
-
-    @NotNull
-    @Column(name = "user_password", nullable = false)
-    private String userPassword;
-
-    @NotNull
     @Column(name = "phone_number", nullable = false)
     private String phoneNumber;
 
@@ -68,11 +49,6 @@ public class Customer implements Serializable {
 
     @Column(name = "country")
     private String country;
-
-    @NotNull
-    @Size(min = 5, max = 30)
-    @Column(name = "email", length = 30, nullable = false)
-    private String email;
 
     @OneToMany(mappedBy = "customer")
     @JsonIgnore
@@ -88,6 +64,10 @@ public class Customer implements Serializable {
     @JsonIgnore
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<WishList> wishlists = new HashSet<>();
+
+    @OneToOne
+    @JoinColumn(unique = true)
+    private User user;
 
     public Long getId() {
         return id;
@@ -134,71 +114,6 @@ public class Customer implements Serializable {
 
     public void setGender(Integer gender) {
         this.gender = gender;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public Customer firstName(String firstName) {
-        this.firstName = firstName;
-        return this;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getMiddleName() {
-        return middleName;
-    }
-
-    public Customer middleName(String middleName) {
-        this.middleName = middleName;
-        return this;
-    }
-
-    public void setMiddleName(String middleName) {
-        this.middleName = middleName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public Customer lastName(String lastName) {
-        this.lastName = lastName;
-        return this;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public Customer userName(String userName) {
-        this.userName = userName;
-        return this;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getUserPassword() {
-        return userPassword;
-    }
-
-    public Customer userPassword(String userPassword) {
-        this.userPassword = userPassword;
-        return this;
-    }
-
-    public void setUserPassword(String userPassword) {
-        this.userPassword = userPassword;
     }
 
     public String getPhoneNumber() {
@@ -251,19 +166,6 @@ public class Customer implements Serializable {
 
     public void setCountry(String country) {
         this.country = country;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public Customer email(String email) {
-        this.email = email;
-        return this;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public Set<ShopingCart> getShopingcarts() {
@@ -341,6 +243,19 @@ public class Customer implements Serializable {
         this.wishlists = wishLists;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public Customer user(User user) {
+        this.user = user;
+        return this;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -368,16 +283,10 @@ public class Customer implements Serializable {
             ", type='" + type + "'" +
             ", organizationName='" + organizationName + "'" +
             ", gender='" + gender + "'" +
-            ", firstName='" + firstName + "'" +
-            ", middleName='" + middleName + "'" +
-            ", lastName='" + lastName + "'" +
-            ", userName='" + userName + "'" +
-            ", userPassword='" + userPassword + "'" +
             ", phoneNumber='" + phoneNumber + "'" +
             ", address='" + address + "'" +
             ", city='" + city + "'" +
             ", country='" + country + "'" +
-            ", email='" + email + "'" +
             '}';
     }
 }

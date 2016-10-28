@@ -19,19 +19,14 @@
             "type": "Type",
             "organizationName": "Organization Name",
             "gender": "Gender",
-            "firstName": "First Name",
-            "middleName": "Middle Name",
-            "lastName": "Last Name",
-            "userName": "User Name",
-            "userPassword": "User Password",
             "phoneNumber": "Phone Number",
             "address": "Address",
             "city": "City",
             "country": "Country",
-            "email": "Email",
             "shopingcart": "Shopingcart",
             "paymentmethod": "Paymentmethod",
-            "wishlist": "Wishlist"
+            "wishlist": "Wishlist",
+            "user": "User"
         }
     }
 }
