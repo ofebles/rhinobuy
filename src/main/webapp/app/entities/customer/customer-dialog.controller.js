@@ -5,9 +5,9 @@
         .module('rhinobuyApp')
         .controller('CustomerDialogController', CustomerDialogController);
 
-    CustomerDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', '$q', 'entity', 'Customer', 'ShopingCart', 'CustomerPaymentMethod', 'WishList', 'User'];
+    CustomerDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Customer', 'ShopingCart', 'CustomerPaymentMethod', 'WishList'];
 
-    function CustomerDialogController ($timeout, $scope, $stateParams, $uibModalInstance, $q, entity, Customer, ShopingCart, CustomerPaymentMethod, WishList, User) {
+    function CustomerDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Customer, ShopingCart, CustomerPaymentMethod, WishList) {
         var vm = this;
 
         vm.customer = entity;
@@ -16,7 +16,6 @@
         vm.shopingcarts = ShopingCart.query();
         vm.customerpaymentmethods = CustomerPaymentMethod.query();
         vm.wishlists = WishList.query();
-        vm.users = User.query();
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();

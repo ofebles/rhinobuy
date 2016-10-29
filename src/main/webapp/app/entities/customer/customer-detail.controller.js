@@ -5,9 +5,9 @@
         .module('rhinobuyApp')
         .controller('CustomerDetailController', CustomerDetailController);
 
-    CustomerDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Customer', 'ShopingCart', 'CustomerPaymentMethod', 'WishList', 'User'];
+    CustomerDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Customer', 'ShopingCart', 'CustomerPaymentMethod', 'WishList'];
 
-    function CustomerDetailController($scope, $rootScope, $stateParams, previousState, entity, Customer, ShopingCart, CustomerPaymentMethod, WishList, User) {
+    function CustomerDetailController($scope, $rootScope, $stateParams, previousState, entity, Customer, ShopingCart, CustomerPaymentMethod, WishList) {
         var vm = this;
 
         vm.customer = entity;

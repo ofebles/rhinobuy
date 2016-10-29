@@ -65,10 +65,6 @@ public class Customer implements Serializable {
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<WishList> wishlists = new HashSet<>();
 
-    @OneToOne
-    @JoinColumn(unique = true)
-    private User user;
-
     public Long getId() {
         return id;
     }
@@ -241,19 +237,6 @@ public class Customer implements Serializable {
 
     public void setWishlists(Set<WishList> wishLists) {
         this.wishlists = wishLists;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public Customer user(User user) {
-        this.user = user;
-        return this;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 
     @Override

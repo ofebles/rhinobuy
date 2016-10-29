@@ -18,14 +18,6 @@
             "relationshipName": "wishlist",
             "otherEntityName": "wishList",
             "otherEntityRelationshipName": "customer"
-        },
-        {
-            "relationshipName": "user",
-            "otherEntityName": "user",
-            "relationshipType": "one-to-one",
-            "otherEntityField": "login",
-            "ownerSide": true,
-            "otherEntityRelationshipName": "customer"
         }
     ],
     "fields": [

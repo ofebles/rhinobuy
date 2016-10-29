@@ -9,7 +9,7 @@ services:
             - SPRING_DATASOURCE_URL=jdbc:postgresql://postgresql:5432/rhinobuy
             - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
         ports:
-            - 8080:8080
+            - 8090:8090
     rhinobuy-postgresql:
         extends:
             file: postgresql.yml

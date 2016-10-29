@@ -5,8 +5,11 @@ import org.ikigai.rhinobuy.domain.Casa;
 
 import org.ikigai.rhinobuy.repository.CasaRepository;
 import org.ikigai.rhinobuy.web.rest.util.HeaderUtil;
+import org.ikigai.rhinobuy.web.rest.util.PaginationUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -80,16 +83,20 @@ public class CasaResource {
     /**
      * GET  /casas : get all the casas.
      *
+     * @param pageable the pagination information
      * @return the ResponseEntity with status 200 (OK) and the list of casas in body
+     * @throws URISyntaxException if there is an error to generate the pagination HTTP headers
      */
     @RequestMapping(value = "/casas",
         method = RequestMethod.GET,
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
-    public List<Casa> getAllCasas() {
-        log.debug("REST request to get all Casas");
-        List<Casa> casas = casaRepository.findAll();
-        return casas;
+    public ResponseEntity<List<Casa>> getAllCasas(Pageable pageable)
+        throws URISyntaxException {
+        log.debug("REST request to get a page of Casas");
+        Page<Casa> page = casaRepository.findAll(pageable);
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/casas");
+        return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }
 
     /**

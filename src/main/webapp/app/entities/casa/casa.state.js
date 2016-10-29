@@ -104,6 +104,8 @@
                     resolve: {
                         entity: function () {
                             return {
+                                direccion: null,
+                                color: null,
                                 id: null
                             };
                         }

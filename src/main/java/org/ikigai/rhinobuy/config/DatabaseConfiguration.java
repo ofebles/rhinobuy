@@ -4,7 +4,6 @@ import org.ikigai.rhinobuy.config.liquibase.AsyncSpringLiquibase;
 
 import com.fasterxml.jackson.datatype.hibernate4.Hibernate4Module;
 import liquibase.integration.spring.SpringLiquibase;
-import org.h2.tools.Server;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.liquibase.LiquibaseProperties;
@@ -18,7 +17,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.inject.Inject;
 import javax.sql.DataSource;
-import java.sql.SQLException;
 
 @Configuration
 @EnableJpaRepositories("org.ikigai.rhinobuy.repository")
@@ -30,18 +28,6 @@ public class DatabaseConfiguration {
 
     @Inject
     private Environment env;
-
-    /**
-     * Open the TCP port for the H2 database, so it is available remotely.
-     *
-     * @return the H2 database TCP server
-     * @throws SQLException if the server failed to start
-     */
-    @Bean(initMethod = "start", destroyMethod = "stop")
-    @Profile(Constants.SPRING_PROFILE_DEVELOPMENT)
-    public Server h2TCPServer() throws SQLException {
-        return Server.createTcpServer("-tcp","-tcpAllowOthers");
-    }
 
     @Bean
     public SpringLiquibase liquibase(DataSource dataSource, LiquibaseProperties liquibaseProperties) {
