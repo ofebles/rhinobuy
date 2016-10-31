@@ -24,7 +24,7 @@ spring:
         serialization.indent_output: true
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:postgresql://localhost:5432/rhinobuybd
+        url: jdbc:postgresql://localhost:5432/rhinobuydb
         name:
         username: postgres
         password: postgres
@@ -59,7 +59,7 @@ liquibase:
     contexts: dev
 
 server:
-    port: 8080
+    port: 8050
 
 # ===================================================================
 # JHipster specific properties
