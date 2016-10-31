@@ -1,9 +1,0 @@
-{
-    "rhinobuyApp": {
-        "CustomerType" : {
-            "null": "",
-            "NATURAL_PERSON": "NATURAL_PERSON",
-            "LEGAL_PERSON": "LEGAL_PERSON"
-        }
-    }
-}

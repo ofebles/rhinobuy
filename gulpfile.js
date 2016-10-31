@@ -1,4 +1,4 @@
-// Generated on 2016-10-29 using generator-jhipster 3.9.1
+// Generated on 2016-10-31 using generator-jhipster 3.10.0
 'use strict';
 
 var gulp = require('gulp'),
@@ -68,7 +68,6 @@ gulp.task('sass', function () {
         gulp.src(config.sassSrc)
         .pipe(plumber({errorHandler: handleErrors}))
         .pipe(expect(config.sassSrc))
-        .pipe(changed(config.cssDir, {extension: '.css'}))
         .pipe(sass({includePaths:config.bower}).on('error', sass.logError))
         .pipe(gulp.dest(config.cssDir)),
         gulp.src(config.bower + '**/fonts/**/*.{woff,woff2,svg,ttf,eot,otf}')

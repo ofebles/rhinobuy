@@ -1,10 +1,10 @@
 {
   "generator-jhipster": {
-    "jhipsterVersion": "3.9.1",
+    "jhipsterVersion": "3.10.0",
     "baseName": "rhinobuy",
-    "packageName": "org.ikigai.rhinobuy",
-    "packageFolder": "org/ikigai/rhinobuy",
-    "serverPort": "8090",
+    "packageName": "org.ingenia.rhinobuy",
+    "packageFolder": "org/ingenia/rhinobuy",
+    "serverPort": "8080",
     "authenticationType": "session",
     "hibernateCache": "ehcache",
     "clusteredHttpSession": false,
@@ -12,11 +12,11 @@
     "databaseType": "sql",
     "devDatabaseType": "postgresql",
     "prodDatabaseType": "postgresql",
-    "searchEngine": true,
+    "searchEngine": "elasticsearch",
     "messageBroker": false,
     "buildTool": "maven",
     "enableSocialSignIn": true,
-    "rememberMeKey": "40c46ad0827d1e958efd6f86ecc8f88387aac868",
+    "rememberMeKey": "77d3a8ba1671aa1c518ff7208f40bee11c98385b",
     "useSass": true,
     "applicationType": "monolith",
     "testFrameworks": [
@@ -29,7 +29,6 @@
       "es",
       "en",
       "pt-br"
-    ],
-    "serviceDiscoveryType": false
+    ]
   }
 }

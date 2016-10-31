@@ -23,7 +23,7 @@ spring:
         username:
         password:
     jpa:
-        database-platform: org.ikigai.rhinobuy.domain.util.FixedH2Dialect
+        database-platform: org.ingenia.rhinobuy.domain.util.FixedH2Dialect
         database: H2
         open-in-view: false
         show-sql: true
@@ -36,6 +36,14 @@ spring:
             hibernate.cache.use_query_cache: false
             hibernate.generate_statistics: true
             hibernate.hbm2ddl.auto: validate
+    data:
+        elasticsearch:
+            cluster-name:
+            cluster-nodes:
+            properties:
+                path:
+                  logs: target/elasticsearch/log
+                  data: target/elasticsearch/data
     mail:
         host: localhost
     mvc:
@@ -67,7 +75,7 @@ jhipster:
     security:
         rememberMe:
             # security key (this key should be unique for your application, and kept secret)
-            key: 40c46ad0827d1e958efd6f86ecc8f88387aac868
+            key: 77d3a8ba1671aa1c518ff7208f40bee11c98385b
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration
         jmx.enabled: true
     swagger:

@@ -17,28 +17,28 @@
             overflowToDisk="false"
             />
 
-    <cache name="org.ikigai.rhinobuy.domain.User"
+    <cache name="org.ingenia.rhinobuy.domain.User"
            timeToLiveSeconds="3600">
     </cache>
 
-    <cache name="org.ikigai.rhinobuy.domain.Authority"
+    <cache name="org.ingenia.rhinobuy.domain.Authority"
            timeToLiveSeconds="3600">
     </cache>
 
-    <cache name="org.ikigai.rhinobuy.domain.User.authorities"
+    <cache name="org.ingenia.rhinobuy.domain.User.authorities"
            timeToLiveSeconds="3600">
     </cache>
 
-    <cache name="org.ikigai.rhinobuy.domain.PersistentToken"
+    <cache name="org.ingenia.rhinobuy.domain.PersistentToken"
            timeToLiveSeconds="3600">
     </cache>
 
-    <cache name="org.ikigai.rhinobuy.domain.User.persistentTokens"
+    <cache name="org.ingenia.rhinobuy.domain.User.persistentTokens"
            timeToLiveSeconds="3600">
     </cache>
     
 
-    <cache name="org.ikigai.rhinobuy.social.SocialUserConnection"
+    <cache name="org.ingenia.rhinobuy.social.SocialUserConnection"
            timeToLiveSeconds="3600">
     </cache>
 

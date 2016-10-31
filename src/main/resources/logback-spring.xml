@@ -22,7 +22,7 @@
     </appender>
 -->
 
-    <logger name="org.ikigai.rhinobuy" level="#logback.loglevel#"/>
+    <logger name="org.ingenia.rhinobuy" level="#logback.loglevel#"/>
 
     <logger name="javax.activation" level="WARN"/>
     <logger name="javax.mail" level="WARN"/>
@@ -37,6 +37,7 @@
     <logger name="org.apache" level="WARN"/>
     <logger name="org.apache.catalina.startup.DigesterFactory" level="OFF"/>
     <logger name="org.bson" level="WARN"/>
+    <logger name="org.elasticsearch" level="WARN"/>
     <logger name="org.hibernate.validator" level="WARN"/>
     <logger name="org.hibernate" level="WARN"/>
     <logger name="org.hibernate.ejb.HibernatePersistence" level="OFF"/>

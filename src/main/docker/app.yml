@@ -4,13 +4,19 @@ services:
         image: rhinobuy
         external_links:
             - rhinobuy-postgresql:postgresql
+            - rhinobuy-elasticsearch:elasticsearch
         environment:
             - SPRING_PROFILES_ACTIVE=prod,swagger
             - SPRING_DATASOURCE_URL=jdbc:postgresql://postgresql:5432/rhinobuy
             - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
+            - SPRING_DATA_ELASTICSEARCH_CLUSTER_NODES=elasticsearch:9300
         ports:
-            - 8090:8090
+            - 8080:8080
     rhinobuy-postgresql:
         extends:
             file: postgresql.yml
             service: rhinobuy-postgresql
+    rhinobuy-elasticsearch:
+        extends:
+            file: elasticsearch.yml
+            service: rhinobuy-elasticsearch

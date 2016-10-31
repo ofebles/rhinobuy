@@ -9,33 +9,44 @@
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css content/css/vendor.css -->
-
-    <link rel="stylesheet" href="content/css/vendor.css">
-
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css">
-    <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/bootstrap-material-design.css">
-    <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/ripples.css">
     <!-- endinject -->
+    <link rel="stylesheet" href="content/css/vendor.css">
     <!-- endbuild -->
+    <!-- placeholder link to load bootswatch themes, title holds the current applied theme name-->
+<link rel="stylesheet" href="" id="bootswatch-css" title="Default">
+
     <!-- build:css content/css/main.css -->
     <link rel="stylesheet" href="content/css/main.css">
     <!-- endbuild -->
 </head>
-<body ng-app="rhinobuyApp" ng-strict-di>
+<body ng-app="rhinobuyApp" ng-strict-di="">
     <!--[if lt IE 9]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <page-ribbon></page-ribbon>
-    <div ui-view="navbar" ng-cloak></div>
+    <div ui-view="navbar" ng-cloak=""></div>
     <div class="container">
         <div class="well" ui-view="content">
             <!-- Angular views -->
         </div>
 
-        <div class="footer" ng-cloak>
+        <div class="footer" ng-cloak="">
             <p data-translate="footer">This is your footer</p>
-        </div>
+            <div ng-controller="BootswatchController as vm" id="bootswatch-theme-switcher" uib-dropdown="" class="dropup pull-right">
+                    <a class="btn btn-default dropdown-toggle" uib-dropdown-toggle="">
+                        <span class="glyphicon glyphicon-adjust"></span>
+                        <span class="hidden-tablet" translate="bootswatch.themeSelector">Theme</span>
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" uib-dropdown-menu="">
+                        <li class="theme-link" ng-repeat="theme in vm.themes">
+                            <a href="" jh-switch-theme="theme">{{theme.name}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
     </div>
 
     <!-- Google Analytics: uncomment and change UA-XXXXX-X to be your site's ID.
@@ -53,8 +64,6 @@
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/messageformat/messageformat.js"></script>
     <script src="bower_components/json3/lib/json3.js"></script>
-    <script src="bower_components/arrive/src/arrive.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-aria/angular-aria.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
@@ -73,8 +82,6 @@
     <script src="bower_components/bootstrap-ui-datetime-picker/dist/datetime-picker.js"></script>
     <script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
     <script src="bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
-    <script src="bower_components/bootstrap-material-design/dist/js/material.js"></script>
-    <script src="bower_components/bootstrap-material-design/dist/js/ripples.js"></script>
     <!-- endinject -->
     <!-- endbuild -->
 
@@ -102,169 +109,7 @@
     <script src="app/layouts/error/error.state.js"></script>
     <script src="app/home/home.state.js"></script>
     <script src="app/home/home.controller.js"></script>
-    <script src="app/entities/wish-list/wish-list-dialog.controller.js"></script>
-    <script src="app/entities/wish-list/wish-list-detail.controller.js"></script>
-    <script src="app/entities/wish-list/wish-list-delete-dialog.controller.js"></script>
-    <script src="app/entities/wish-list/wish-list.state.js"></script>
-    <script src="app/entities/wish-list/wish-list.service.js"></script>
-    <script src="app/entities/wish-list/wish-list.controller.js"></script>
-    <script src="app/entities/supplier/supplier-dialog.controller.js"></script>
-    <script src="app/entities/supplier/supplier-detail.controller.js"></script>
-    <script src="app/entities/supplier/supplier-delete-dialog.controller.js"></script>
-    <script src="app/entities/supplier/supplier.state.js"></script>
-    <script src="app/entities/supplier/supplier.service.js"></script>
-    <script src="app/entities/supplier/supplier.controller.js"></script>
-    <script src="app/entities/shoping-cart/shoping-cart-dialog.controller.js"></script>
-    <script src="app/entities/shoping-cart/shoping-cart-detail.controller.js"></script>
-    <script src="app/entities/shoping-cart/shoping-cart-delete-dialog.controller.js"></script>
-    <script src="app/entities/shoping-cart/shoping-cart.state.js"></script>
-    <script src="app/entities/shoping-cart/shoping-cart.service.js"></script>
-    <script src="app/entities/shoping-cart/shoping-cart.controller.js"></script>
-    <script src="app/entities/shipment/shipment-dialog.controller.js"></script>
-    <script src="app/entities/shipment/shipment-detail.controller.js"></script>
-    <script src="app/entities/shipment/shipment-delete-dialog.controller.js"></script>
-    <script src="app/entities/shipment/shipment.state.js"></script>
-    <script src="app/entities/shipment/shipment.service.js"></script>
-    <script src="app/entities/shipment/shipment.controller.js"></script>
-    <script src="app/entities/reference-payment-method/reference-payment-method-dialog.controller.js"></script>
-    <script src="app/entities/reference-payment-method/reference-payment-method-detail.controller.js"></script>
-    <script src="app/entities/reference-payment-method/reference-payment-method-delete-dialog.controller.js"></script>
-    <script src="app/entities/reference-payment-method/reference-payment-method.state.js"></script>
-    <script src="app/entities/reference-payment-method/reference-payment-method.service.js"></script>
-    <script src="app/entities/reference-payment-method/reference-payment-method.controller.js"></script>
-    <script src="app/entities/reference-language/reference-language-dialog.controller.js"></script>
-    <script src="app/entities/reference-language/reference-language-detail.controller.js"></script>
-    <script src="app/entities/reference-language/reference-language-delete-dialog.controller.js"></script>
-    <script src="app/entities/reference-language/reference-language.state.js"></script>
-    <script src="app/entities/reference-language/reference-language.service.js"></script>
-    <script src="app/entities/reference-language/reference-language.controller.js"></script>
-    <script src="app/entities/reference-invoice-status/reference-invoice-status-dialog.controller.js"></script>
-    <script src="app/entities/reference-invoice-status/reference-invoice-status-detail.controller.js"></script>
-    <script src="app/entities/reference-invoice-status/reference-invoice-status-delete-dialog.controller.js"></script>
-    <script src="app/entities/reference-invoice-status/reference-invoice-status.state.js"></script>
-    <script src="app/entities/reference-invoice-status/reference-invoice-status.service.js"></script>
-    <script src="app/entities/reference-invoice-status/reference-invoice-status.controller.js"></script>
-    <script src="app/entities/promotion/promotion-dialog.controller.js"></script>
-    <script src="app/entities/promotion/promotion-detail.controller.js"></script>
-    <script src="app/entities/promotion/promotion-delete-dialog.controller.js"></script>
-    <script src="app/entities/promotion/promotion.state.js"></script>
-    <script src="app/entities/promotion/promotion.service.js"></script>
-    <script src="app/entities/promotion/promotion.controller.js"></script>
-    <script src="app/entities/product-description/product-description-dialog.controller.js"></script>
-    <script src="app/entities/product-description/product-description-detail.controller.js"></script>
-    <script src="app/entities/product-description/product-description-delete-dialog.controller.js"></script>
-    <script src="app/entities/product-description/product-description.state.js"></script>
-    <script src="app/entities/product-description/product-description.service.js"></script>
-    <script src="app/entities/product-description/product-description.controller.js"></script>
-    <script src="app/entities/product/product-dialog.controller.js"></script>
-    <script src="app/entities/product/product-detail.controller.js"></script>
-    <script src="app/entities/product/product-delete-dialog.controller.js"></script>
-    <script src="app/entities/product/product.state.js"></script>
-    <script src="app/entities/product/product.service.js"></script>
-    <script src="app/entities/product/product.controller.js"></script>
-    <script src="app/entities/picture/picture-dialog.controller.js"></script>
-    <script src="app/entities/picture/picture-detail.controller.js"></script>
-    <script src="app/entities/picture/picture-delete-dialog.controller.js"></script>
-    <script src="app/entities/picture/picture.state.js"></script>
-    <script src="app/entities/picture/picture.service.js"></script>
-    <script src="app/entities/picture/picture.controller.js"></script>
-    <script src="app/entities/persona/persona-dialog.controller.js"></script>
-    <script src="app/entities/persona/persona-detail.controller.js"></script>
-    <script src="app/entities/persona/persona-delete-dialog.controller.js"></script>
-    <script src="app/entities/persona/persona.state.js"></script>
-    <script src="app/entities/persona/persona.service.js"></script>
-    <script src="app/entities/persona/persona.controller.js"></script>
-    <script src="app/entities/person/person-dialog.controller.js"></script>
-    <script src="app/entities/person/person-detail.controller.js"></script>
-    <script src="app/entities/person/person-delete-dialog.controller.js"></script>
-    <script src="app/entities/person/person.state.js"></script>
-    <script src="app/entities/person/person.service.js"></script>
-    <script src="app/entities/person/person.controller.js"></script>
-    <script src="app/entities/payment/payment-dialog.controller.js"></script>
-    <script src="app/entities/payment/payment-detail.controller.js"></script>
-    <script src="app/entities/payment/payment-delete-dialog.controller.js"></script>
-    <script src="app/entities/payment/payment.state.js"></script>
-    <script src="app/entities/payment/payment.service.js"></script>
-    <script src="app/entities/payment/payment.controller.js"></script>
-    <script src="app/entities/orders/orders-dialog.controller.js"></script>
-    <script src="app/entities/orders/orders-detail.controller.js"></script>
-    <script src="app/entities/orders/orders-delete-dialog.controller.js"></script>
-    <script src="app/entities/orders/orders.state.js"></script>
-    <script src="app/entities/orders/orders.service.js"></script>
-    <script src="app/entities/orders/orders.controller.js"></script>
-    <script src="app/entities/order-item-status-code/order-item-status-code-dialog.controller.js"></script>
-    <script src="app/entities/order-item-status-code/order-item-status-code-detail.controller.js"></script>
-    <script src="app/entities/order-item-status-code/order-item-status-code-delete-dialog.controller.js"></script>
-    <script src="app/entities/order-item-status-code/order-item-status-code.state.js"></script>
-    <script src="app/entities/order-item-status-code/order-item-status-code.service.js"></script>
-    <script src="app/entities/order-item-status-code/order-item-status-code.controller.js"></script>
-    <script src="app/entities/order-item/order-item-dialog.controller.js"></script>
-    <script src="app/entities/order-item/order-item-detail.controller.js"></script>
-    <script src="app/entities/order-item/order-item-delete-dialog.controller.js"></script>
-    <script src="app/entities/order-item/order-item.state.js"></script>
-    <script src="app/entities/order-item/order-item.service.js"></script>
-    <script src="app/entities/order-item/order-item.controller.js"></script>
-    <script src="app/entities/metric/metric-dialog.controller.js"></script>
-    <script src="app/entities/metric/metric-detail.controller.js"></script>
-    <script src="app/entities/metric/metric-delete-dialog.controller.js"></script>
-    <script src="app/entities/metric/metric.state.js"></script>
-    <script src="app/entities/metric/metric.service.js"></script>
-    <script src="app/entities/metric/metric.controller.js"></script>
-    <script src="app/entities/invoice/invoice-dialog.controller.js"></script>
-    <script src="app/entities/invoice/invoice-detail.controller.js"></script>
-    <script src="app/entities/invoice/invoice-delete-dialog.controller.js"></script>
-    <script src="app/entities/invoice/invoice.state.js"></script>
-    <script src="app/entities/invoice/invoice.service.js"></script>
-    <script src="app/entities/invoice/invoice.controller.js"></script>
-    <script src="app/entities/goal/goal-dialog.controller.js"></script>
-    <script src="app/entities/goal/goal-detail.controller.js"></script>
-    <script src="app/entities/goal/goal-delete-dialog.controller.js"></script>
-    <script src="app/entities/goal/goal.state.js"></script>
-    <script src="app/entities/goal/goal.service.js"></script>
-    <script src="app/entities/goal/goal.controller.js"></script>
-    <script src="app/entities/entry/entry-dialog.controller.js"></script>
-    <script src="app/entities/entry/entry-detail.controller.js"></script>
-    <script src="app/entities/entry/entry-delete-dialog.controller.js"></script>
-    <script src="app/entities/entry/entry.state.js"></script>
-    <script src="app/entities/entry/entry.service.js"></script>
-    <script src="app/entities/entry/entry.controller.js"></script>
     <script src="app/entities/entity.state.js"></script>
-    <script src="app/entities/customer-payment-method/customer-payment-method-dialog.controller.js"></script>
-    <script src="app/entities/customer-payment-method/customer-payment-method-detail.controller.js"></script>
-    <script src="app/entities/customer-payment-method/customer-payment-method-delete-dialog.controller.js"></script>
-    <script src="app/entities/customer-payment-method/customer-payment-method.state.js"></script>
-    <script src="app/entities/customer-payment-method/customer-payment-method.service.js"></script>
-    <script src="app/entities/customer-payment-method/customer-payment-method.controller.js"></script>
-    <script src="app/entities/customer/customer-dialog.controller.js"></script>
-    <script src="app/entities/customer/customer-detail.controller.js"></script>
-    <script src="app/entities/customer/customer-delete-dialog.controller.js"></script>
-    <script src="app/entities/customer/customer.state.js"></script>
-    <script src="app/entities/customer/customer.service.js"></script>
-    <script src="app/entities/customer/customer.controller.js"></script>
-    <script src="app/entities/category/category-dialog.controller.js"></script>
-    <script src="app/entities/category/category-detail.controller.js"></script>
-    <script src="app/entities/category/category-delete-dialog.controller.js"></script>
-    <script src="app/entities/category/category.state.js"></script>
-    <script src="app/entities/category/category.service.js"></script>
-    <script src="app/entities/category/category.controller.js"></script>
-    <script src="app/entities/casa/casa-dialog.controller.js"></script>
-    <script src="app/entities/casa/casa-detail.controller.js"></script>
-    <script src="app/entities/casa/casa-delete-dialog.controller.js"></script>
-    <script src="app/entities/casa/casa.state.js"></script>
-    <script src="app/entities/casa/casa.service.js"></script>
-    <script src="app/entities/casa/casa.controller.js"></script>
-    <script src="app/entities/book/book-dialog.controller.js"></script>
-    <script src="app/entities/book/book-detail.controller.js"></script>
-    <script src="app/entities/book/book-delete-dialog.controller.js"></script>
-    <script src="app/entities/book/book.state.js"></script>
-    <script src="app/entities/book/book.service.js"></script>
-    <script src="app/entities/book/book.controller.js"></script>
-    <script src="app/entities/author/author-dialog.controller.js"></script>
-    <script src="app/entities/author/author-detail.controller.js"></script>
-    <script src="app/entities/author/author-delete-dialog.controller.js"></script>
-    <script src="app/entities/author/author.state.js"></script>
-    <script src="app/entities/author/author.service.js"></script>
-    <script src="app/entities/author/author.controller.js"></script>
     <script src="app/components/util/truncate-words.filter.js"></script>
     <script src="app/components/util/truncate-characters.filter.js"></script>
     <script src="app/components/util/sort-by.directive.js"></script>
@@ -286,6 +131,9 @@
     <script src="app/components/form/pagination.constants.js"></script>
     <script src="app/components/form/minbytes.directive.js"></script>
     <script src="app/components/form/maxbytes.directive.js"></script>
+    <script src="app/components/bootswatch/bootswatch.service.js"></script>
+    <script src="app/components/bootswatch/bootswatch.directive.js"></script>
+    <script src="app/components/bootswatch/bootswatch.controller.js"></script>
     <script src="app/components/alert/alert-error.directive.js"></script>
     <script src="app/components/alert/alert.service.js"></script>
     <script src="app/components/alert/alert.directive.js"></script>
@@ -301,7 +149,6 @@
     <script src="app/blocks/config/localstorage.config.js"></script>
     <script src="app/blocks/config/http.config.js"></script>
     <script src="app/blocks/config/compile.config.js"></script>
-    <script src="app/blocks/config/bootstrap-material.config.js"></script>
     <script src="app/blocks/config/alert.config.js"></script>
     <script src="app/app.state.js"></script>
     <script src="app/app.constants.js"></script>

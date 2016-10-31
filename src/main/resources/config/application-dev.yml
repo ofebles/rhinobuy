@@ -29,7 +29,7 @@ spring:
         username: postgres
         password: postgres
     jpa:
-        database-platform: org.ikigai.rhinobuy.domain.util.FixedPostgreSQL82Dialect
+        database-platform: org.ingenia.rhinobuy.domain.util.FixedPostgreSQL82Dialect
         database: POSTGRESQL
         show-sql: true
         properties:
@@ -37,6 +37,14 @@ spring:
             hibernate.cache.use_query_cache: false
             hibernate.generate_statistics: true
             hibernate.cache.region.factory_class: org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory
+    data:
+        elasticsearch:
+            cluster-name:
+            cluster-nodes:
+            properties:
+                path:
+                  logs: target/elasticsearch/log
+                  data: target/elasticsearch/data
     mail:
         host: localhost
         port: 25
@@ -51,7 +59,7 @@ liquibase:
     contexts: dev
 
 server:
-    port: 8090
+    port: 8080
 
 # ===================================================================
 # JHipster specific properties
@@ -59,13 +67,12 @@ server:
 
 jhipster:
     cache: # Hibernate 2nd level cache, used by CacheConfiguration
-        timeToLiveSeconds: 3600
         ehcache:
             maxBytesLocalHeap: 16M
     security:
         rememberMe:
             # security key (this key should be unique for your application, and kept secret)
-            key: 40c46ad0827d1e958efd6f86ecc8f88387aac868
+            key: 77d3a8ba1671aa1c518ff7208f40bee11c98385b
     mail: # specific JHipster mail property, for standard properties see MailProperties
         from: rhinobuy@localhost
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration
