@@ -1,0 +1,24 @@
+{
+    "rhinobuyApp": {
+        "picture" : {
+            "home": {
+                "title": "Imágenes",
+                "createLabel": "Agregar imagen",
+                "createOrEditLabel": "Crear o editar imagen",
+                "search": "... "
+            },
+            "created": "Una nueva imagen ha sido creadA con el identificador {{ param }}",
+            "updated": "Una imagen ha sido actualizadA con el identificador {{ param }}",
+            "deleted": "Una imagen ha sido eliminadA con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar imagen {{ id }}?"
+            },
+            "detail": {
+                "title": "Imagen"
+            },
+            "path": "url",
+            "image": "Image",
+            "product": "Producto"
+        }
+    }
+}

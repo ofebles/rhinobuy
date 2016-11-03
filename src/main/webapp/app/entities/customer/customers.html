@@ -1,0 +1,107 @@
+<div>
+
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-7 no-padding">
+                <h2 data-translate="rhinobuyApp.customer.home.title">Customers</h2>
+           </div>
+
+
+
+            <div class="col-sm-5 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="form-group pull-right">
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'rhinobuyApp.customer.home.search' | translate }}">
+
+                        <!--span  class="input-group-btn width-min" -->
+                            <button class="btn btn-info btn-sm" ng-click="vm.search(vm.searchQuery)">
+                                <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                        <!--/span-->
+                        <!--span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span-->
+
+
+                    <button class="btn btn-primary btn-sm" ui-sref="customer.new" >
+                        <span class="glyphicon glyphicon-plus"></span>
+                        <!--span class="btn btn-primary btn-sm"> <data-translate="rhinobuyApp.customer.home.createLabel"
+
+                     </span-->
+                    </button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <!--th><span data-translate="global.field.id">ID</span></th-->
+                    <th><span data-translate="rhinobuyApp.customer.type">Type</span></th>
+                    <th><span data-translate="rhinobuyApp.customer.organizationName">Org</span></th>
+                    <th><span data-translate="rhinobuyApp.customer.firstName">First Name</span></th>
+                    <!--th><span data-translate="rhinobuyApp.customer.middleName">Middle Name</span></th-->
+                    <th><span data-translate="rhinobuyApp.customer.lastName">Last Name</span></th>
+                    <th><span data-translate="rhinobuyApp.customer.phoneNumber">Phone Number</span></th>
+                    <th><span data-translate="rhinobuyApp.customer.city">City</span></th>
+                    <th><span data-translate="rhinobuyApp.customer.country">Country</span></th>
+                    <th><span data-translate="rhinobuyApp.customer.address">Address</span></th>
+                    <!--th><span data-translate="rhinobuyApp.customer.wishlist">Wishlist</span></th-->
+                    <th><span data-translate="rhinobuyApp.customer.user">User</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="customer in vm.customers track by customer.id">
+                    <!--td><a ui-sref="customer-detail({id:customer.id})">{{customer.id}}</a></td-->
+                    <td data-translate="{{'rhinobuyApp.CustomerType.' + customer.type}}">{{customer.type}}</td>
+                    <td>{{customer.organizationName}}</td>
+                    <td>{{customer.firstName}}</td>
+                    <!--td>{{customer.middleName}}</td-->
+                    <td>{{customer.lastName}}</td>
+                    <td>{{customer.phoneNumber}}</td>
+                    <td>{{customer.city}}</td>
+                    <td>{{customer.country}}</td>
+                    <td>{{customer.address}}</td>
+                    <!--td>
+                        <a ui-sref="wish-list-detail({id:customer.wishlist.id})">{{customer.wishlist.id}}</a>
+                    </td-->
+                    <td>
+                        {{customer.user.login}}
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="customer-detail({id:customer.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm"> <!--data-translate="entity.action.view"--></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="customer.edit({id:customer.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm"> <!--data-translate="entity.action.edit"--></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="customer.delete({id:customer.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm">
+                                     <!-- data-translate="entity.action.delete"
+                                --></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

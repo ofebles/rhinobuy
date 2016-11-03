@@ -1,0 +1,24 @@
+{
+    "rhinobuyApp": {
+        "referenceInvoiceStatus" : {
+            "home": {
+                "title": "Reference Invoice Statuses",
+                "createLabel": "Create a new Reference Invoice Status",
+                "createOrEditLabel": "Create or edit a Reference Invoice Status",
+                "search": "Search for Reference Invoice Status"
+            },
+            "created": "A new Reference Invoice Status is created with identifier {{ param }}",
+            "updated": "A Reference Invoice Status is updated with identifier {{ param }}",
+            "deleted": "A Reference Invoice Status is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Reference Invoice Status {{ id }}?"
+            },
+            "detail": {
+                "title": "Reference Invoice Status"
+            },
+            "number": "Number",
+            "invoiceDate": "Invoice Date",
+            "invoiceDetails": "Invoice Details"
+        }
+    }
+}

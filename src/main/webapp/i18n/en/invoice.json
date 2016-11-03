@@ -1,0 +1,28 @@
+{
+    "rhinobuyApp": {
+        "invoice" : {
+            "home": {
+                "title": "Invoices",
+                "createLabel": "Create a new Invoice",
+                "createOrEditLabel": "Create or edit a Invoice",
+                "search": "Search for Invoice"
+            },
+            "created": "A new Invoice is created with identifier {{ param }}",
+            "updated": "A Invoice is updated with identifier {{ param }}",
+            "deleted": "A Invoice is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Invoice {{ id }}?"
+            },
+            "detail": {
+                "title": "Invoice"
+            },
+            "number": "Number",
+            "invoiceDate": "Invoice Date",
+            "invoiceDetails": "Invoice Details",
+            "shipment": "Shipment",
+            "payment": "Payment",
+            "status": "Status",
+            "order": "Order"
+        }
+    }
+}

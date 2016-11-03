@@ -1,0 +1,119 @@
+<div>
+
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-7 no-padding-left">
+                <h2 data-translate="rhinobuyApp.product.home.title">Products</h2>
+            </div>
+
+
+            <div class="col-xs-5 no-padding">
+                <form name="searchForm" class="form-inline">
+                    <div class="form-group pull-right">
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery"
+                               placeholder="{{ 'rhinobuyApp.product.home.search' | translate }}">
+
+                        <button class="btn btn-info" ng-if="vm.currentSearch" ng-click="vm.clear()">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+
+                        <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+
+                        <!--span class="input-group-btn width-min" -->
+
+                        <!--/span-->
+
+                        <button class="btn btn-primary" ui-sref="product.new">
+                            <span class="glyphicon glyphicon-plus"></span>
+                            <!--span class="hidden-xs"  data-translate="rhinobuyApp.product.home.createLabel">
+                            Create new Product
+                        </span-->
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+            <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                <!--th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th-->
+                <th jh-sort-by="returnAuthorization"><span data-translate="rhinobuyApp.product.returnAuthorization">Return Authorization</span>
+                    <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="name"><span data-translate="rhinobuyApp.product.name">Name</span> <span
+                    class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="price"><span data-translate="rhinobuyApp.product.price">Price</span> <span
+                    class="glyphicon glyphicon-sort"></span></th>
+                <!--th jh-sort-by="size"><span data-translate="rhinobuyApp.product.size">Size</span> <span class="glyphicon glyphicon-sort"></span></th-->
+                <th jh-sort-by="color"><span data-translate="rhinobuyApp.product.color">Color</span> <span
+                    class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="description"><span data-translate="rhinobuyApp.product.description">Description</span>
+                    <span class="glyphicon glyphicon-sort"></span></th>
+                <!--th jh-sort-by="otherDetails"><span data-translate="rhinobuyApp.product.otherDetails">Other Details</span> <span class="glyphicon glyphicon-sort"></span></th-->
+                <!--th jh-sort-by="product.id"><span data-translate="rhinobuyApp.product.product">Product</span> <span class="glyphicon glyphicon-sort"></span></th-->
+                <th jh-sort-by="category.id"><span data-translate="rhinobuyApp.product.category">Category</span> <span
+                    class="glyphicon glyphicon-sort"></span></th>
+                <!--th jh-sort-by="shopingCart.id"><span data-translate="rhinobuyApp.product.shopingCart">Shoping Cart</span> <span class="glyphicon glyphicon-sort"></span></th-->
+                <!--th jh-sort-by="promotion.id"><span data-translate="rhinobuyApp.product.promotion">Promotion</span> <span class="glyphicon glyphicon-sort"></span></th-->
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="product in vm.products track by product.id">
+                <!--td><a ui-sref="product-detail({id:product.id})">{{product.id}}</a></td-->
+                <td class="text-center"><i class="glyphicon" ng-class="{'glyphicon-ok text-success': product.returnAuthorization,
+                  'glyphicon-remove text-danger': !product.returnAuthorization}"></i></td>
+                <td>{{product.name}}</td>
+                <td>{{product.price}}</td>
+                <!--td>{{product.size}}</td-->
+                <td>{{product.color}}</td>
+                <td>{{product.description}}</td>
+                <!--td>{{product.otherDetails}}</td-->
+                <!--td>
+                    <a ui-sref="product-detail({id:product.product.id})">{{product.product.id}}</a>
+                </td-->
+                <td>
+                    <a ui-sref="category-detail({id:product.category.id})">{{product.category.name}}</a>
+                </td>
+                <!--td>
+                    <a ui-sref="shoping-cart-detail({id:product.shopingCart.id})">{{product.shopingCart.id}}</a>
+                </td-->
+                <!--td>
+                    <a ui-sref="promotion-detail({id:product.promotion.id})">{{product.promotion.id}}</a>
+                </td-->
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                ui-sref="product-detail({id:product.id})"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                            <!--span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span-->
+                        </button>
+                        <button type="submit"
+                                ui-sref="product.edit({id:product.id})"
+                                class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                            <!--span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span-->
+                        </button>
+                        <button type="submit"
+                                ui-sref="product.delete({id:product.id})"
+                                class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>
+                            <!--span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span-->
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+    </div>
+    <uib-pager total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.transition()"></uib-pager>
+</div>

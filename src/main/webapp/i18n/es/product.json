@@ -1,0 +1,37 @@
+{
+    "rhinobuyApp": {
+        "product" : {
+            "home": {
+                "title": "Productos",
+                "createLabel": "Crear nuevo Producto",
+                "createOrEditLabel": "Crear o editar Producto",
+                "search": "..."
+            },
+            "created": "Un nuevo Producto ha sido creado con el identificador {{ param }}",
+            "updated": "Un Producto ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Producto ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Producto {{ id }}?"
+            },
+            "detail": {
+                "title": "Producto"
+            },
+            "returnAuthorization": "¿A/Dev?",
+            "name": "Nombre",
+            "price": "Precio",
+            "size": "Tamaño",
+            "color": "Color",
+            "description": "Descripción",
+            "otherDetails": "Otros detalles",
+            "product": "Producto Padre",
+            "product": "Producto",
+            "description": "Descripción",
+            "image": "Fotos",
+            "category": "Categoría",
+            "supplier": "Proveedor",
+            "wlist": "Lista de deseos",
+            "shopingCart": "Shoping Cart",
+            "promotion": "Promoción"
+        }
+    }
+}

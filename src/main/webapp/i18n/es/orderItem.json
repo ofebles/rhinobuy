@@ -1,0 +1,26 @@
+{
+    "rhinobuyApp": {
+        "orderItem" : {
+            "home": {
+                "title": "Items de una Orden",
+                "createLabel": "Crear nuevo Item",
+                "createOrEditLabel": "Crear o editar  Item",
+                "search": "..."
+            },
+            "created": "Un nuevo Item ha sido creado con el identificador {{ param }}",
+            "updated": "Un Item ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Item ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Item {{ id }}?"
+            },
+            "detail": {
+                "title": "Item"
+            },
+            "quantity": "Cantidad",
+            "price": "Precio",
+            "details": "Detalles",
+            "orders": "Ordenes",
+            "status": "Estado"
+        }
+    }
+}

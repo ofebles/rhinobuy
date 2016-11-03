@@ -1,0 +1,44 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "invoice",
+            "otherEntityName": "invoice",
+            "otherEntityRelationshipName": "order"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "shipment",
+            "otherEntityName": "shipment",
+            "otherEntityRelationshipName": "orders"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "item",
+            "otherEntityName": "orderItem",
+            "otherEntityRelationshipName": "orders"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "productos",
+            "otherEntityName": "product",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "datePlaced",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "details",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20161031233931",
+    "entityTableName": "orders",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl"
+}

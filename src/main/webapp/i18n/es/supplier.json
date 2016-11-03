@@ -1,0 +1,23 @@
+{
+    "rhinobuyApp": {
+        "supplier" : {
+            "home": {
+                "title": "Proveedor",
+                "createLabel": "Crear nuevo Proveedor",
+                "createOrEditLabel": "Crear o editar Proveedor",
+                "search": "..."
+            },
+            "created": "Un nuevo Proveedor ha sido creado con el identificador {{ param }}",
+            "updated": "Un Proveedor ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Proveedor ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar el Proveedor {{ id }}?"
+            },
+            "detail": {
+                "title": "Proveedor"
+            },
+            "name": "Nombre",
+            "product": "Productos"
+        }
+    }
+}

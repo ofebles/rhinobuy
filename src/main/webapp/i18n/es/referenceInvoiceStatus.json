@@ -1,0 +1,24 @@
+{
+    "rhinobuyApp": {
+        "referenceInvoiceStatus" : {
+            "home": {
+                "title": "Referencia de Estado de Factura",
+                "createLabel": "Crear Referencia de Estado de Factura",
+                "createOrEditLabel": "Crear o editar Referencia de Estado de Factura",
+                "search": "... "
+            },
+            "created": "Una nueva Referencia de Estado de Factura ha sido creada con el identificador {{ param }}",
+            "updated": "Una Referencia de Estado de Factura ha sido actualizada con el identificador {{ param }}",
+            "deleted": "Referencia de Estado de Factura ha sido eliminada con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar la Referencia de Estado de Factura {{ id }}?"
+            },
+            "detail": {
+                "title": "Referencia de Estado de Factura"
+            },
+            "number": "Número",
+            "invoiceDate": "Fecha de la Facura",
+            "invoiceDetails": "Detalles de la factura"
+        }
+    }
+}

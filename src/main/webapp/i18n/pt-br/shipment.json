@@ -1,0 +1,26 @@
+{
+    "rhinobuyApp": {
+        "shipment" : {
+            "home": {
+                "title": "Shipments",
+                "createLabel": "Criar novo Shipment",
+                "createOrEditLabel": "Criar ou editar Shipment",
+                "search": "Pesquisar por Shipment"
+            },
+            "created": "Um novo Shipment é criado com o identificador {{ param }}",
+            "updated": "Um Shipment é atualizado com o identificador {{ param }}",
+            "deleted": "Um Shipment é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Shipment {{ id }}?"
+            },
+            "detail": {
+                "title": "Shipment"
+            },
+            "trackingNumber": "Tracking Number",
+            "shipmentDate": "Shipment Date",
+            "otherDetails": "Other Details",
+            "orders": "Orders",
+            "invoice": "Invoice"
+        }
+    }
+}

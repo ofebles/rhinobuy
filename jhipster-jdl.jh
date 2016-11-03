@@ -7,20 +7,15 @@ enum CustomerType{
 entity Customer {
 	type CustomerType,
     organizationName String,
-    gender Integer,
     firstName String required,
     middleName String,
-    lastName String required,
-    email String required maxlength(30)
-    minlength(5) pattern("[\\w]*@[a-zA-Z]*.com"),
-    userName String required,
-    userPassword String required,
+    lastName String,
     phoneNumber String required,
-    address String,
     city String,
     country String,
-}
+    address String,
 
+}
 
 
 entity CustomerPaymentMethod{
@@ -43,7 +38,7 @@ entity ProductDescription {
 entity Product {
 	returnAuthorization Boolean,
     name String required,
-    price Double required,
+    price BigDecimal required,
     size String,
     color String required,
     description String required,
@@ -53,6 +48,7 @@ entity Product {
 
 entity Picture {
 	path String,
+    image ImageBlob,
 }
 entity Category{
    name String required,
@@ -61,12 +57,12 @@ entity Category{
 }
 
 entity ShopingCart {
-	date LocalDate
+	date ZonedDateTime,
 }
 
 
 entity WishList {
-	name String required,
+	name String,
 }
 
 entity Promotion {
@@ -74,7 +70,7 @@ entity Promotion {
 }
 entity Payment {
 	paymentDate LocalDate,
-	ammount Double,
+	ammount BigDecimal,
 }
 
 entity Supplier {
@@ -83,13 +79,13 @@ entity Supplier {
 
 entity ReferenceInvoiceStatus {
 	number String,
-	invoiceDate LocalDate,
+	invoiceDate ZonedDateTime,
     invoiceDetails String,
 }
 
 
 entity Orders {
-	datePlaced LocalDate,
+	datePlaced ZonedDateTime,
 	details String
 }
 
@@ -107,14 +103,14 @@ entity OrderItemStatusCode {
 
 entity Shipment {
     trackingNumber String,
-    shipmentDate LocalDate,
+    shipmentDate ZonedDateTime,
     otherDetails String,
 }
 
 
 entity Invoice {
 	number String,
-	invoiceDate LocalDate,
+	invoiceDate ZonedDateTime,
     invoiceDetails String,
 }
 
@@ -125,17 +121,16 @@ relationship OneToMany {
 	Category{category} to Category,
     Customer{shopingcart} to ShopingCart,
     Customer{paymentmethod} to CustomerPaymentMethod,
-    Customer{wishlist} to WishList,
     Product{product} to Product,
     Invoice{payment} to Payment,
     Orders{invoice} to Invoice{order},
     Orders{shipment} to Shipment,
     Orders{item} to OrderItem,
-    ShopingCart{productos} to Product,
+    ShopingCart{product} to Product,
     Product{description} to  ProductDescription,
     Shipment{invoice} to  Invoice,
     Product{image} to Picture,
- 	Promotion{products} to Product 
+ 	Promotion{product} to Product 
 
 }
 
@@ -154,11 +149,16 @@ relationship ManyToOne {
 
 relationship ManyToMany{
  Supplier{product} to Product{supplier},
- WishList{product} to Product
+ WishList{product} to Product{wlist}
 
 }
 
-paginate Customer with infinite-scroll
+relationship OneToOne{
+ Customer{wishlist} to WishList,
+ Customer{user} to User
+}
+
+paginate Product with infinite-scroll
 paginate Product with pager
 service all with serviceImpl
 

@@ -1,0 +1,35 @@
+
+<div>
+    <h2><span data-translate="rhinobuyApp.shipment.detail.title">Shipment</span> {{vm.shipment.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="rhinobuyApp.shipment.trackingNumber">Tracking Number</span></dt>
+        <dd>
+            <span>{{vm.shipment.trackingNumber}}</span>
+        </dd>
+        <dt><span data-translate="rhinobuyApp.shipment.shipmentDate">Shipment Date</span></dt>
+        <dd>
+            <span>{{vm.shipment.shipmentDate | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="rhinobuyApp.shipment.otherDetails">Other Details</span></dt>
+        <dd>
+            <span>{{vm.shipment.otherDetails}}</span>
+        </dd>
+        <dt><span data-translate="rhinobuyApp.shipment.orders">Orders</span></dt>
+        <dd>
+            <a ui-sref="orders-detail({id:vm.shipment.orders.id})">{{vm.shipment.orders.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="shipment-detail.edit({id:vm.shipment.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

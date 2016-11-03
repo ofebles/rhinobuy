@@ -1,0 +1,36 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "orders",
+            "otherEntityName": "orders",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "invoice",
+            "otherEntityName": "invoice",
+            "otherEntityRelationshipName": "shipment"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "trackingNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "shipmentDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "otherDetails",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20161031233934",
+    "entityTableName": "shipment",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl"
+}

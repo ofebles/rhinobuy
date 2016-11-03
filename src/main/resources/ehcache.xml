@@ -42,5 +42,149 @@
            timeToLiveSeconds="3600">
     </cache>
 
+    <cache name="org.ingenia.rhinobuy.domain.Customer"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="org.ingenia.rhinobuy.domain.Customer.shopingcarts"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="org.ingenia.rhinobuy.domain.Customer.paymentmethods"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="org.ingenia.rhinobuy.domain.CustomerPaymentMethod"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="org.ingenia.rhinobuy.domain.ReferencePaymentMethod"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="org.ingenia.rhinobuy.domain.ReferenceLanguage"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="org.ingenia.rhinobuy.domain.ProductDescription"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="org.ingenia.rhinobuy.domain.Product"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="org.ingenia.rhinobuy.domain.Product.products"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="org.ingenia.rhinobuy.domain.Product.descriptions"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="org.ingenia.rhinobuy.domain.Product.images"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="org.ingenia.rhinobuy.domain.Product.suppliers"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="org.ingenia.rhinobuy.domain.Product.wlists"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="org.ingenia.rhinobuy.domain.Picture"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="org.ingenia.rhinobuy.domain.Category"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="org.ingenia.rhinobuy.domain.Category.categories"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="org.ingenia.rhinobuy.domain.ShopingCart"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="org.ingenia.rhinobuy.domain.ShopingCart.products"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="org.ingenia.rhinobuy.domain.WishList"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="org.ingenia.rhinobuy.domain.WishList.products"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="org.ingenia.rhinobuy.domain.Promotion"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="org.ingenia.rhinobuy.domain.Promotion.products"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="org.ingenia.rhinobuy.domain.Payment"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="org.ingenia.rhinobuy.domain.Supplier"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="org.ingenia.rhinobuy.domain.Supplier.products"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="org.ingenia.rhinobuy.domain.ReferenceInvoiceStatus"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="org.ingenia.rhinobuy.domain.Orders"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="org.ingenia.rhinobuy.domain.Orders.invoices"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="org.ingenia.rhinobuy.domain.Orders.shipments"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="org.ingenia.rhinobuy.domain.Orders.items"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="org.ingenia.rhinobuy.domain.OrderItem"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="org.ingenia.rhinobuy.domain.OrderItemStatusCode"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="org.ingenia.rhinobuy.domain.Shipment"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="org.ingenia.rhinobuy.domain.Shipment.invoices"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="org.ingenia.rhinobuy.domain.Invoice"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="org.ingenia.rhinobuy.domain.Invoice.payments"
+        timeToLiveSeconds="3600">
+    </cache>
+
     <!-- jhipster-needle-ehcache-add-entry -->
 </ehcache>

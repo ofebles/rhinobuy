@@ -1,0 +1,56 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myCustomerPaymentMethodLabel" data-translate="rhinobuyApp.customerPaymentMethod.home.createOrEditLabel">Create or edit a Customer Payment Method</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.customerPaymentMethod.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.customerPaymentMethod.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="rhinobuyApp.customerPaymentMethod.code" for="field_code">Code</label>
+            <input type="text" class="form-control" name="code" id="field_code"
+                    ng-model="vm.customerPaymentMethod.code"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="rhinobuyApp.customerPaymentMethod.creditCardNumber" for="field_creditCardNumber">Credit Card Number</label>
+            <input type="text" class="form-control" name="creditCardNumber" id="field_creditCardNumber"
+                    ng-model="vm.customerPaymentMethod.creditCardNumber"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="rhinobuyApp.customerPaymentMethod.details" for="field_details">Details</label>
+            <input type="text" class="form-control" name="details" id="field_details"
+                    ng-model="vm.customerPaymentMethod.details"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="rhinobuyApp.customerPaymentMethod.customer" for="field_customer">Customer</label>
+            <select class="form-control" id="field_customer" name="customer" ng-model="vm.customerPaymentMethod.customer" ng-options="customer as customer.id for customer in vm.customers track by customer.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="rhinobuyApp.customerPaymentMethod.reference" for="field_reference">Reference</label>
+            <select class="form-control" id="field_reference" name="reference" ng-model="vm.customerPaymentMethod.reference" ng-options="referencePaymentMethod as referencePaymentMethod.id for referencePaymentMethod in vm.referencepaymentmethods track by referencePaymentMethod.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

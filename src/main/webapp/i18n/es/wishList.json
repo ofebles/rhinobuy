@@ -1,0 +1,23 @@
+{
+    "rhinobuyApp": {
+        "wishList" : {
+            "home": {
+                "title": "Lista de Deseos",
+                "createLabel": "Crear nueva Lista de deseos",
+                "createOrEditLabel": "Crear o editar Lista de deseos",
+                "search": "..."
+            },
+            "created": "Una nueva Lista de deseos ha sido creada con el identificador {{ param }}",
+            "updated": "Una Lista de deseos ha sido actualizada con el identificador {{ param }}",
+            "deleted": "Una Lista de deseos ha sido eliminada con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar la Lista de deseos {{ id }}?"
+            },
+            "detail": {
+                "title": "Lista de deseos"
+            },
+            "name": "Nombre",
+            "product": "Productos"
+        }
+    }
+}

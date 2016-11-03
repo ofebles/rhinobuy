@@ -1,0 +1,35 @@
+
+<div>
+    <h2><span data-translate="rhinobuyApp.payment.detail.title">Payment</span> {{vm.payment.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="rhinobuyApp.payment.paymentDate">Payment Date</span></dt>
+        <dd>
+            <span>{{vm.payment.paymentDate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="rhinobuyApp.payment.ammount">Ammount</span></dt>
+        <dd>
+            <span>{{vm.payment.ammount}}</span>
+        </dd>
+        <dt><span data-translate="rhinobuyApp.payment.method">Method</span></dt>
+        <dd>
+            <a ui-sref="customer-payment-method-detail({id:vm.payment.method.id})">{{vm.payment.method.id}}</a>
+        </dd>
+        <dt><span data-translate="rhinobuyApp.payment.invoice">Invoice</span></dt>
+        <dd>
+            <a ui-sref="invoice-detail({id:vm.payment.invoice.id})">{{vm.payment.invoice.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="payment-detail.edit({id:vm.payment.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

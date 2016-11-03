@@ -1,0 +1,15 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20161031233919",
+    "entityTableName": "reference_payment_method",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl"
+}

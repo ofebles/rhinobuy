@@ -1,0 +1,26 @@
+{
+    "rhinobuyApp": {
+        "customerPaymentMethod" : {
+            "home": {
+                "title": "Métodos de Pago",
+                "createLabel": "Nuevo Método de Pago",
+                "createOrEditLabel": "Crear o editar Métodos de Pago",
+                "search": "..."
+            },
+            "created": "Un nuevo Método de Pago ha sido creado con el identificador {{ param }}",
+            "updated": "Un Método de Pago ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Método de Pago ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Método de Pago {{ id }}?"
+            },
+            "detail": {
+                "title": "Métodos de Pago"
+            },
+            "code": "Código",
+            "creditCardNumber": "Tarjeta de Crédito",
+            "details": "Detalles",
+            "customer": "Cliente",
+            "reference": "Referencia"
+        }
+    }
+}

@@ -7,6 +7,25 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entidades",
+                "customer": "Cliente",
+                "customerPaymentMethod": "Métodos de Pago",
+                "referencePaymentMethod": "Referencia de Métodos de Pago",
+                "referenceLanguage": "Idioma",
+                "productDescription": "Descripción del producto",
+                "product": "Producto",
+                "picture": "Foto",
+                "category": "Categoría",
+                "shopingCart": "Shoping Cart",
+                "wishList": "Lista de deseos",
+                "promotion": "Promoción",
+                "payment": "Pago",
+                "supplier": "Proveedor",
+                "referenceInvoiceStatus": "Referencia Estado de Factura",
+                "orders": "Orden",
+                "orderItem": "Elementos de la Orden",
+                "orderItemStatusCode": "Código de estado de la Orden",
+                "shipment": "Envío",
+                "invoice": "Factura",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
@@ -119,5 +138,5 @@
         "emailexists": "E-mail is already in use!",
         "idexists": "A new {{entityName}} cannot already have an ID"
     },
-    "footer": "pie de página"
+    "footer": "<strong>RhinoBuy</strong>  Brokins Ingenia CV de SA. 2016"
 }

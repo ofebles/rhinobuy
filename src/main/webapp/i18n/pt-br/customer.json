@@ -1,0 +1,34 @@
+{
+    "rhinobuyApp": {
+        "customer" : {
+            "home": {
+                "title": "Customers",
+                "createLabel": "Criar novo Customer",
+                "createOrEditLabel": "Criar ou editar Customer",
+                "search": "Pesquisar por Customer"
+            },
+            "created": "Um novo Customer é criado com o identificador {{ param }}",
+            "updated": "Um Customer é atualizado com o identificador {{ param }}",
+            "deleted": "Um Customer é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Customer {{ id }}?"
+            },
+            "detail": {
+                "title": "Customer"
+            },
+            "type": "Type",
+            "organizationName": "Organization Name",
+            "firstName": "First Name",
+            "middleName": "Middle Name",
+            "lastName": "Last Name",
+            "phoneNumber": "Phone Number",
+            "city": "City",
+            "country": "Country",
+            "address": "Address",
+            "wishlist": "Wishlist",
+            "user": "User",
+            "shopingcart": "Shopingcart",
+            "paymentmethod": "Paymentmethod"
+        }
+    }
+}

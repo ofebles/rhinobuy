@@ -1,0 +1,63 @@
+
+<div>
+    <h2><span data-translate="rhinobuyApp.product.detail.title">Product</span> {{vm.product.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="rhinobuyApp.product.returnAuthorization">Return Authorization</span></dt>
+        <dd>
+            <span>{{vm.product.returnAuthorization}}</span>
+        </dd>
+        <dt><span data-translate="rhinobuyApp.product.name">Name</span></dt>
+        <dd>
+            <span>{{vm.product.name}}</span>
+        </dd>
+        <dt><span data-translate="rhinobuyApp.product.price">Price</span></dt>
+        <dd>
+            <span>{{vm.product.price}}</span>
+        </dd>
+        <dt><span data-translate="rhinobuyApp.product.size">Size</span></dt>
+        <dd>
+            <span>{{vm.product.size}}</span>
+        </dd>
+        <dt><span data-translate="rhinobuyApp.product.color">Color</span></dt>
+        <dd>
+            <span>{{vm.product.color}}</span>
+        </dd>
+        <dt><span data-translate="rhinobuyApp.product.description">Description</span></dt>
+        <dd>
+            <span>{{vm.product.description}}</span>
+        </dd>
+        <dt><span data-translate="rhinobuyApp.product.otherDetails">Other Details</span></dt>
+        <dd>
+            <span>{{vm.product.otherDetails}}</span>
+        </dd>
+        <dt><span data-translate="rhinobuyApp.product.product">Product</span></dt>
+        <dd>
+            <a ui-sref="product-detail({id:vm.product.product.id})">{{vm.product.product.name}}</a>
+        </dd>
+        <dt><span data-translate="rhinobuyApp.product.category">Category</span></dt>
+        <dd>
+            <a ui-sref="category-detail({id:vm.product.category.id})">{{vm.product.category.name}}</a>
+        </dd>
+        <dt><span data-translate="rhinobuyApp.product.shopingCart">Shoping Cart</span></dt>
+        <!--dd>
+            <a ui-sref="shoping-cart-detail({id:vm.product.shopingCart.id})">{{vm.product.shopingCart.id}}</a>
+        </dd-->
+        <dt><span data-translate="rhinobuyApp.product.promotion">Promotion</span></dt>
+        <!--dd>
+            <a ui-sref="promotion-detail({id:vm.product.promotion.id})">{{vm.product.promotion.id}}</a>
+        </dd-->
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="product-detail.edit({id:vm.product.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

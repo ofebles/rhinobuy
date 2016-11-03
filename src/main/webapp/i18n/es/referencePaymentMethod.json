@@ -1,0 +1,22 @@
+{
+    "rhinobuyApp": {
+        "referencePaymentMethod" : {
+            "home": {
+                "title": "Referencia para Métodos de Pago",
+                "createLabel": "Crear nueva Referencia para Métodos de Pago",
+                "createOrEditLabel": "Crear o editar Referencia para Métodos de Pago",
+                "search": "..."
+            },
+            "created": "Una nueva Referencia para Métodos de Pago ha sido creada con el identificador {{ param }}",
+            "updated": "Una Referencia para Métodos de Pago ha sido actualizada con el identificador {{ param }}",
+            "deleted": "Una Referencia para Métodos de Pago ha sido eliminada con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Referencia para Métodos de Pago {{ id }}?"
+            },
+            "detail": {
+                "title": "Referencia para Métodos de Pago"
+            },
+            "description": "Descripción"
+        }
+    }
+}

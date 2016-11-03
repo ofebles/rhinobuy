@@ -1,0 +1,28 @@
+{
+    "rhinobuyApp": {
+        "invoice" : {
+            "home": {
+                "title": "Facturas",
+                "createLabel": "Crear nueva Factura",
+                "createOrEditLabel": "Crear o editar Factura",
+                "search": "..."
+            },
+            "created": "Una nueva Factura ha sido creado con el identificador {{ param }}",
+            "updated": "Una Factura ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Una Factura ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar la Factura {{ id }}?"
+            },
+            "detail": {
+                "title": "Factura"
+            },
+            "number": "Número",
+            "invoiceDate": "Fecha de creación",
+            "invoiceDetails": "Detalles",
+            "shipment": "Envío",
+            "payment": "Pago",
+            "status": "Estado",
+            "order": "Orden"
+        }
+    }
+}

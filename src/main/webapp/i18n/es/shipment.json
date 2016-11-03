@@ -1,0 +1,26 @@
+{
+    "rhinobuyApp": {
+        "shipment" : {
+            "home": {
+                "title": "Envío",
+                "createLabel": "Crear nuevo Envío",
+                "createOrEditLabel": "Crear o editar Envío",
+                "search": "..."
+            },
+            "created": "Un nuevo Envío ha sido creado con el identificador {{ param }}",
+            "updated": "Un Envío ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Envío ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Envío {{ id }}?"
+            },
+            "detail": {
+                "title": "Envío"
+            },
+            "trackingNumber": "Tracking Number",
+            "shipmentDate": "Fecha de Envío ",
+            "otherDetails": "Detalles",
+            "orders": "Ordenes",
+            "invoice": "Facturas"
+        }
+    }
+}

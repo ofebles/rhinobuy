@@ -1,0 +1,24 @@
+{
+    "rhinobuyApp": {
+        "productDescription" : {
+            "home": {
+                "title": "Descripción del producto",
+                "createLabel": "Crear nueva Descripción",
+                "createOrEditLabel": "Crear o editar Descripción",
+                "search": "... "
+            },
+            "created": "Una nueva Descripción ha sido creado con el identificador {{ param }}",
+            "updated": "Una Descripción ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Una Descripción ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar la Descripción {{ id }}?"
+            },
+            "detail": {
+                "title": "Descripción de Producto"
+            },
+            "content": "Contenido",
+            "lang": "Idioma",
+            "product": "Producto asociado"
+        }
+    }
+}

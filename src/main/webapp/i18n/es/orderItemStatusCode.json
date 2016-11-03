@@ -1,0 +1,22 @@
+{
+    "rhinobuyApp": {
+        "orderItemStatusCode" : {
+            "home": {
+                "title": "Código de Estado de Item",
+                "createLabel": "Crear nuevo Código de Estado de Item",
+                "createOrEditLabel": "Crear o editar Código de Estado de Item",
+                "search": "... "
+            },
+            "created": "Un nuevo Código de Estado de Item ha sido creado con el identificador {{ param }}",
+            "updated": "Un Código de Estado de Item ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un OCódigo de Estado de Item ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Código de Estado de Item {{ id }}?"
+            },
+            "detail": {
+                "title": "Código de Estado de Item"
+            },
+            "description": "Descripción"
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "rhinobuyApp": {
+        "category" : {
+            "home": {
+                "title": "Categorías",
+                "createLabel": "Crear nueva Categoría",
+                "createOrEditLabel": "Crear o editar Categoría",
+                "search": "Buscar .... "
+            },
+            "created": "Una nueva categoría ha sido creado con el identificador {{ param }}",
+            "updated": "Una nueva categoría ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Una nueva categoría ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar la categoría: {{ name }}?"
+            },
+            "detail": {
+                "title": "Categoría"
+            },
+            "name": "Nombre",
+            "description": "Descripción",
+            "category": "Categoría",
+            "category": "Categoría"
+        }
+    }
+}

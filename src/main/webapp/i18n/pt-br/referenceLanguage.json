@@ -1,0 +1,22 @@
+{
+    "rhinobuyApp": {
+        "referenceLanguage" : {
+            "home": {
+                "title": "Reference Languages",
+                "createLabel": "Criar novo Reference Language",
+                "createOrEditLabel": "Criar ou editar Reference Language",
+                "search": "Pesquisar por Reference Language"
+            },
+            "created": "Um novo Reference Language é criado com o identificador {{ param }}",
+            "updated": "Um Reference Language é atualizado com o identificador {{ param }}",
+            "deleted": "Um Reference Language é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Reference Language {{ id }}?"
+            },
+            "detail": {
+                "title": "Reference Language"
+            },
+            "lang": "Lang"
+        }
+    }
+}
