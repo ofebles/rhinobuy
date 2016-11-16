@@ -1,30 +1,27 @@
 <div>
-    <h2 data-translate="rhinobuyApp.promotion.home.title">Promotions</h2>
     <jhi-alert></jhi-alert>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-xs-4 no-padding-left">
-                <button class="btn btn-primary" ui-sref="promotion.new" >
-                    <span class="glyphicon glyphicon-plus"></span>
-                    <span class="hidden-xs"  data-translate="rhinobuyApp.promotion.home.createLabel">
-                        Create new Promotion
-                    </span>
-                </button>
+            <div class="col-xs-7 no-padding-left">
+                <h2 data-translate="rhinobuyApp.promotion.home.title">Promotions</h2>
+
+
             </div>
-            <div class="col-xs-8 no-padding-right">
+            <div class="col-xs-5 no-padding-right">
                 <form name="searchForm" class="form-inline">
-                    <div class="input-group pull-right" >
+                    <div class="form-group pull-right" >
                         <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'rhinobuyApp.promotion.home.search' | translate }}">
-                        <span  class="input-group-btn width-min" >
                             <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
                                 <span class="glyphicon glyphicon-search"></span>
                             </button>
-                        </span>
                         <span class="input-group-btn width-min" ng-if="vm.currentSearch">
                             <button class="btn btn-info" ng-click="vm.clear()">
                                 <span class="glyphicon glyphicon-trash"></span>
                             </button>
                         </span>
+                        <button class="btn btn-primary" ui-sref="promotion.new" >
+                            <span class="glyphicon glyphicon-plus"></span>
+                        </button>
                     </div>
                 </form>
             </div>
@@ -35,14 +32,14 @@
         <table class="jh-table table table-striped">
             <thead>
                 <tr>
-                    <th><span data-translate="global.field.id">ID</span></th>
+                    <!--th><span data-translate="global.field.id">ID</span></th-->
                     <th><span data-translate="rhinobuyApp.promotion.description">Description</span></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="promotion in vm.promotions track by promotion.id">
-                    <td><a ui-sref="promotion-detail({id:promotion.id})">{{promotion.id}}</a></td>
+                    <!--td><a ui-sref="promotion-detail({id:promotion.id})">{{promotion.id}}</a></td-->
                     <td>{{promotion.description}}</td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">

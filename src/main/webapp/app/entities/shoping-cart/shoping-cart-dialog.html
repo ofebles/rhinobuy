@@ -26,7 +26,7 @@
 
         <div class="form-group">
             <label data-translate="rhinobuyApp.shopingCart.customer" for="field_customer">Customer</label>
-            <select class="form-control" id="field_customer" name="customer" ng-model="vm.shopingCart.customer" ng-options="customer as customer.id for customer in vm.customers track by customer.id">
+            <select class="form-control" id="field_customer" name="customer" ng-model="vm.shopingCart.customer" ng-options="customer as customer.firstName for customer in vm.customers track by customer.id">
                 <option value=""></option>
             </select>
         </div>

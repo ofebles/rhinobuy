@@ -22,7 +22,7 @@
 
         <div class="form-group">
             <label data-translate="rhinobuyApp.wishList.product" for="field_product">Product</label>
-            <select class="form-control" id="field_product" multiple name="product" ng-model="vm.wishList.products" ng-options="product as product.id for product in vm.products track by product.id"></select>
+            <select class="form-control" id="field_product" multiple name="product" ng-model="vm.wishList.products" ng-options="product as product.name for product in vm.products track by product.id"></select>
         </div>
     </div>
     <div class="modal-footer">

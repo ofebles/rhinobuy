@@ -1,30 +1,25 @@
 <div>
-    <h2 data-translate="rhinobuyApp.picture.home.title">Pictures</h2>
     <jhi-alert></jhi-alert>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-xs-4 no-padding-left">
-                <button class="btn btn-primary" ui-sref="picture.new" >
-                    <span class="glyphicon glyphicon-plus"></span>
-                    <span class="hidden-xs"  data-translate="rhinobuyApp.picture.home.createLabel">
-                        Create new Picture
-                    </span>
-                </button>
+            <div class="col-xs-7 no-padding-left">
+                <h2 data-translate="rhinobuyApp.picture.home.title">Pictures</h2>
+
             </div>
-            <div class="col-xs-8 no-padding-right">
+            <div class="col-xs-5 no-padding-right">
                 <form name="searchForm" class="form-inline">
-                    <div class="input-group pull-right" >
+                    <div class="form-group pull-right" >
                         <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'rhinobuyApp.picture.home.search' | translate }}">
-                        <span  class="input-group-btn width-min" >
                             <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
                                 <span class="glyphicon glyphicon-search"></span>
                             </button>
-                        </span>
-                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
-                            <button class="btn btn-info" ng-click="vm.clear()">
+                            <button class="btn btn-info" ng-click="vm.clear()" ng-if="vm.currentSearch">
                                 <span class="glyphicon glyphicon-trash"></span>
                             </button>
-                        </span>
+                        <button class="btn btn-primary" ui-sref="picture.new" >
+                            <span class="glyphicon glyphicon-plus"></span>
+                        </button>
+
                     </div>
                 </form>
             </div>

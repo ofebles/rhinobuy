@@ -22,13 +22,13 @@
 
         <div class="form-group">
             <label data-translate="rhinobuyApp.productDescription.lang" for="field_lang">Lang</label>
-            <select class="form-control" id="field_lang" name="lang" ng-model="vm.productDescription.lang" ng-options="referenceLanguage as referenceLanguage.id for referenceLanguage in vm.referencelanguages track by referenceLanguage.id">
+            <select class="form-control" id="field_lang" name="lang" ng-model="vm.productDescription.lang" ng-options="referenceLanguage as referenceLanguage.lang for referenceLanguage in vm.referencelanguages track by referenceLanguage.id">
                 <option value=""></option>
             </select>
         </div>
         <div class="form-group">
             <label data-translate="rhinobuyApp.productDescription.product" for="field_product">Product</label>
-            <select class="form-control" id="field_product" name="product" ng-model="vm.productDescription.product" ng-options="product as product.id for product in vm.products track by product.id">
+            <select class="form-control" id="field_product" name="product" ng-model="vm.productDescription.product" ng-options="product as product.name for product in vm.products track by product.id">
                 <option value=""></option>
             </select>
         </div>

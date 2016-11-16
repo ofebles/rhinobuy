@@ -1,30 +1,28 @@
 <div>
-    <h2 data-translate="rhinobuyApp.wishList.home.title">Wish Lists</h2>
     <jhi-alert></jhi-alert>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-xs-4 no-padding-left">
-                <button class="btn btn-primary" ui-sref="wish-list.new" >
-                    <span class="glyphicon glyphicon-plus"></span>
-                    <span class="hidden-xs"  data-translate="rhinobuyApp.wishList.home.createLabel">
-                        Create new Wish List
-                    </span>
-                </button>
+            <div class="col-xs-7 no-padding-left">
+                <h2 data-translate="rhinobuyApp.wishList.home.title">Wish Lists</h2>
+
             </div>
-            <div class="col-xs-8 no-padding-right">
+            <div class="col-xs-5 no-padding-right">
                 <form name="searchForm" class="form-inline">
-                    <div class="input-group pull-right" >
+                    <div class="form-group pull-right" >
                         <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'rhinobuyApp.wishList.home.search' | translate }}">
-                        <span  class="input-group-btn width-min" >
                             <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
                                 <span class="glyphicon glyphicon-search"></span>
                             </button>
-                        </span>
-                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                        <i class="input-group-btn width-min" ng-if="vm.currentSearch">
                             <button class="btn btn-info" ng-click="vm.clear()">
                                 <span class="glyphicon glyphicon-trash"></span>
                             </button>
-                        </span>
+                        </i>
+                        <button class="btn btn-primary" ui-sref="wish-list.new" >
+                            <span class="glyphicon glyphicon-plus"></span>
+
+                        </button>
+
                     </div>
                 </form>
             </div>
@@ -35,7 +33,7 @@
         <table class="jh-table table table-striped">
             <thead>
                 <tr>
-                    <th><span data-translate="global.field.id">ID</span></th>
+                    <!--th><span data-translate="global.field.id">ID</span></th-->
                     <th><span data-translate="rhinobuyApp.wishList.name">Name</span></th>
                     <th><span data-translate="rhinobuyApp.wishList.product">Product</span></th>
                     <th></th>
@@ -43,11 +41,11 @@
             </thead>
             <tbody>
                 <tr ng-repeat="wishList in vm.wishLists track by wishList.id">
-                    <td><a ui-sref="wish-list-detail({id:wishList.id})">{{wishList.id}}</a></td>
+                    <!--td><a ui-sref="wish-list-detail({id:wishList.id})">{{wishList.id}}</a></td-->
                     <td>{{wishList.name}}</td>
                     <td>
                         <span ng-repeat="product in wishList.products">
-                            <a class="form-control-static" ui-sref="product-detail({id: product.id})">{{product.id}}</a>{{$last ? '' : ', '}}
+                            <a class="form-control-static" ui-sref="product-detail({id: product.id})">{{product.name}}</a>{{$last ? '' : ', '}}
                         </span>
                     </td>
                     <td class="text-right">
